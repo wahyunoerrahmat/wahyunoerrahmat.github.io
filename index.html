@@ -360,238 +360,282 @@
     <section id="projects">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">03. ETALASE STUDI KASUS</div>
-          <h2 class="section-title">Portofolio Proyek &amp; <span>Karya Unggulan</span></h2>
-          <p class="section-subtitle">Setiap proyek dirancang untuk memecahkan tantangan nyata dengan standar performa dan tampilan kelas atas.</p>
+          <div class="section-tag">03. REPOSITORI &amp; TUTORIAL PUBLIK</div>
+          <h2 class="section-title">Repositori GitHub &amp; <span>Tutorial Pembuatan</span></h2>
+          <p class="section-subtitle">Eksplorasi proyek open-source publik di GitHub. Klik tutorial pada proyek untuk melihat panduan langkah demi langkah cara membangunnya.</p>
+          <div class="github-sync-badge">⚡ Terhubung Langsung dengan Repositori Publik GitHub @wahyunoerrahmat</div>
         </div>
 
         <!-- Category Filters -->
         <div class="filter-tabs">
           <button class="filter-btn active" data-filter="all">Semua Proyek</button>
-          <button class="filter-btn" data-filter="web">Web Applications</button>
-          <button class="filter-btn" data-filter="desktop">Desktop &amp; Sistem</button>
-          <button class="filter-btn" data-filter="ui">UI/UX &amp; Architecture</button>
+          <button class="filter-btn" data-filter="web">Web &amp; Full-Stack</button>
+          <button class="filter-btn" data-filter="ai">AI &amp; Data Science</button>
+          <button class="filter-btn" data-filter="desktop">Desktop &amp; GUI</button>
+          <button class="filter-btn" data-filter="devops">DevOps &amp; Framework</button>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card" data-category="web">
+        <div class="projects-grid" id="githubReposGrid">
+          <!-- Repo 1: Sistem Pakar Forward Chaining -->
+          <div class="project-card" data-category="ai">
             <div class="project-image">
-              <span class="project-badge-top">STUDI KASUS #01</span>
-              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="220" fill="#0f111a"/>
-                <rect x="25" y="25" width="350" height="170" rx="10" fill="#181b28" stroke="rgba(99,102,241,0.3)" stroke-width="2"/>
-                <rect x="40" y="45" width="80" height="130" rx="6" fill="#11131c"/>
-                <rect x="135" y="45" width="225" height="40" rx="6" fill="rgba(99,102,241,0.2)"/>
-                <rect x="135" y="95" width="105" height="80" rx="6" fill="#11131c"/>
-                <rect x="255" y="95" width="105" height="80" rx="6" fill="#11131c"/>
-                <circle cx="187" cy="135" r="22" fill="none" stroke="#06b6d4" stroke-width="5"/>
-                <path d="M275 150 L295 125 L315 135 L345 110" fill="none" stroke="#a855f7" stroke-width="3"/>
+              <span class="project-badge-top">PUBLIC REPO • PYTHON AI</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#0f111a"/>
+                <circle cx="200" cy="105" r="65" fill="none" stroke="#6366f1" stroke-width="2" stroke-dasharray="8 8"/>
+                <circle cx="200" cy="105" r="40" fill="rgba(99,102,241,0.2)"/>
+                <text x="200" y="110" font-family="'Fira Code', monospace" font-weight="700" font-size="14" fill="#fff" text-anchor="middle">EXPERT SYSTEM AI</text>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-tags">
-                <span class="tag">Modern Web</span>
-                <span class="tag">Dashboard Analytics</span>
-                <span class="tag">HTML5/CSS3</span>
+                <span class="tag">Python</span>
+                <span class="tag">Forward Chaining</span>
+                <span class="tag">Sistem Pakar</span>
               </div>
-              <h3>Enterprise AI Analytics Dashboard</h3>
-              <p>Aplikasi dasbor pemantauan analitik interaktif dengan visualisasi data real-time, mode gelap eksekutif, serta optimasi rendering super cepat tanpa jeda.</p>
+              <h3>Sistem Pakar Diagnosis Gizi Buruk Balita</h3>
+              <p>Sistem pakar berbasis Python menggunakan metode Forward Chaining untuk mendiagnosis status gizi buruk pada balita berdasarkan evaluasi aturan gejala medik.</p>
               <div class="project-metrics">
-                <div class="metric-item">
-                  <strong>99/100</strong>
-                  Lighthouse Score
-                </div>
-                <div class="metric-item">
-                  <strong>&lt; 0.3s</strong>
-                  Time to Interactive
-                </div>
+                <div class="metric-item"><strong>Rule-Based AI</strong>Mesin Inferensi</div>
+                <div class="metric-item"><strong>Python 3</strong>CLI &amp; Logic Engine</div>
               </div>
               <div class="project-links">
-                <button class="btn-case-study" data-case="ai-analytics">📄 Detail Case Study</button>
-                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
+                <button class="btn-case-study" data-tutorial="sistem-pakar">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON" target="_blank" class="project-link">⭐ Repo GitHub</a>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Repo 2: K-Means Literasi Jawa Barat -->
+          <div class="project-card" data-category="ai">
+            <div class="project-image">
+              <span class="project-badge-top">PUBLIC REPO • DATA SCIENCE</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#11131c"/>
+                <circle cx="140" cy="90" r="28" fill="rgba(6,182,212,0.25)" stroke="#06b6d4" stroke-width="2"/>
+                <circle cx="250" cy="120" r="34" fill="rgba(168,85,247,0.25)" stroke="#a855f7" stroke-width="2"/>
+                <line x1="165" y1="100" x2="220" y2="115" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 4"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">K-Means Clustering</span>
+                <span class="tag">Python Data</span>
+              </div>
+              <h3>Klasterisasi Literasi Jawa Barat (K-Means)</h3>
+              <p>Analisis data science dan klasterisasi tingkat literasi kabupaten/kota di Jawa Barat menerapkan algoritma unsupervised learning K-Means Clustering.</p>
+              <div class="project-metrics">
+                <div class="metric-item"><strong>Elbow Method</strong>Clustering Optimal</div>
+                <div class="metric-item"><strong>Data Science</strong>Pandas / Scikit</div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-tutorial="k-means">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/K-Means_Literasi_Jawa_Barat" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 3: Sistem Manajemen Absensi Magang & Karyawan -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <span class="project-badge-top">PUBLIC REPO • WEB SYSTEM</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#0a0b10"/>
+                <rect x="50" y="40" width="300" height="130" rx="10" fill="#181b28" stroke="#6366f1" stroke-width="2"/>
+                <rect x="80" y="70" width="110" height="20" rx="4" fill="rgba(99,102,241,0.3)"/>
+                <rect x="80" y="105" width="240" height="15" rx="4" fill="rgba(255,255,255,0.08)"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Full-Stack Web</span>
+                <span class="tag">Absensi Real-Time</span>
+                <span class="tag">Database SQL</span>
+              </div>
+              <h3>Sistem Manajemen Absensi Magang &amp; Karyawan</h3>
+              <p>Aplikasi pencatatan kehadiran presensi magang terintegrasi dengan validasi jam masuk/pulang, rekapitulasi kehadiran, serta dasbor pengawas.</p>
+              <div class="project-metrics">
+                <div class="metric-item"><strong>Multi-Role</strong>Admin &amp; Peserta</div>
+                <div class="metric-item"><strong>Real-Time Log</strong>Presensi Terverifikasi</div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-tutorial="absensi-magang">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 4: BawasluKabBogor -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <span class="project-badge-top">PUBLIC REPO • PORTAL WEB</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#11131c"/>
+                <rect x="40" y="35" width="320" height="140" rx="8" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
+                <text x="200" y="110" font-family="'Outfit', sans-serif" font-weight="800" font-size="18" fill="#fff" text-anchor="middle">PORTAL INFORMASI BAWASLU</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">CMS Portal</span>
+                <span class="tag">Web Architecture</span>
+                <span class="tag">Responsive UI</span>
+              </div>
+              <h3>Sistem Portal Informasi Bawaslu Kab. Bogor</h3>
+              <p>Portal web pengawasan pemilu dan informasi publik Kabupaten Bogor dengan penyajian dokumen regulasi, pengarsipan berita, serta panel administrasi.</p>
+              <div class="project-metrics">
+                <div class="metric-item"><strong>Informasi Publik</strong>Transparan &amp; Cepat</div>
+                <div class="metric-item"><strong>SEO Friendly</strong>Struktur Semantik</div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-tutorial="bawaslu-bogor">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/BawasluKabBogor" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 5: LearnDevOpsEgineer -->
+          <div class="project-card" data-category="devops">
+            <div class="project-image">
+              <span class="project-badge-top">PUBLIC REPO • DEVOPS</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#0f111a"/>
+                <path d="M100 105 L160 55 L220 105 L160 155 Z" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+                <path d="M220 105 L280 55 L340 105 L280 155 Z" fill="rgba(6,182,212,0.2)" stroke="#06b6d4" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Docker</span>
+                <span class="tag">CI/CD Pipeline</span>
+                <span class="tag">DevOps Practice</span>
+              </div>
+              <h3>DevOps Engineering Roadmap &amp; CI/CD Practice</h3>
+              <p>Implementasi otomatisasi infrastruktur, kontainerisasi aplikasi menggunakan Docker, serta pengujian pipa CI/CD berstandar rekayasa keandalan sistem.</p>
+              <div class="project-metrics">
+                <div class="metric-item"><strong>Docker Ready</strong>Containerization</div>
+                <div class="metric-item"><strong>Automated</strong>Continuous Integration</div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-tutorial="devops-practice">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/LearnDevOpsEgineer" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 6: Steganografi Citra Digital -->
+          <div class="project-card" data-category="ai">
+            <div class="project-image">
+              <span class="project-badge-top">PUBLIC REPO • IMAGE PROCESSING</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#11131c"/>
+                <rect x="80" y="45" width="240" height="120" rx="6" fill="#181b28" stroke="#a855f7" stroke-width="2"/>
+                <text x="200" y="110" font-family="'Fira Code', monospace" font-size="14" fill="#34d399" text-anchor="middle">LSB STEGANOGRAPHY</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Image Processing</span>
+                <span class="tag">Steganografi LSB</span>
+                <span class="tag">Kriptografi</span>
+              </div>
+              <h3>Pengolahan Citra Digital &amp; Steganografi LSB</h3>
+              <p>Algoritma manipulasi bit piksel Least Significant Bit (LSB) untuk menyisipkan dan mengekstraksi pesan rahasia di dalam berkas gambar digital.</p>
+              <div class="project-metrics">
+                <div class="metric-item"><strong>LSB Encoding</strong>Keamanan Pesan</div>
+                <div class="metric-item"><strong>Piksel Presisi</strong>Tanpa Distorsi Visual</div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-tutorial="steganografi">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/metode-manipulasi-citra-digital-steganografi" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 7: Desktop Aplikasi Manajemen GUI -->
           <div class="project-card" data-category="desktop">
             <div class="project-image">
-              <span class="project-badge-top">STUDI KASUS #02</span>
-              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="220" fill="#11131c"/>
-                <rect x="50" y="30" width="300" height="160" rx="8" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
+              <span class="project-badge-top">PUBLIC REPO • DESKTOP GUI</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#0a0b10"/>
+                <rect x="50" y="30" width="300" height="150" rx="8" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
                 <circle cx="70" cy="48" r="5" fill="#ff5f56"/>
                 <circle cx="85" cy="48" r="5" fill="#ffbd2e"/>
                 <circle cx="100" cy="48" r="5" fill="#27c93f"/>
-                <rect x="70" y="70" width="260" height="24" rx="4" fill="rgba(6,182,212,0.15)"/>
-                <rect x="70" y="105" width="260" height="24" rx="4" fill="rgba(255,255,255,0.05)"/>
-                <rect x="70" y="140" width="180" height="24" rx="4" fill="rgba(255,255,255,0.05)"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-tags">
                 <span class="tag">Desktop App</span>
-                <span class="tag">High Performance</span>
-                <span class="tag">Data Management</span>
-              </div>
-              <h3>Desktop Resource Management System</h3>
-              <p>Perangkat lunak desktop berkinerja tinggi untuk pengolahan inventaris dan pemantauan sumber daya operasional dengan latensi pemrosesan data instan.</p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <strong>10,000+</strong>
-                  Rows / Sec Processing
-                </div>
-                <div class="metric-item">
-                  <strong>Zero Lag</strong>
-                  Native GUI Responsiveness
-                </div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-case="desktop-system">📄 Detail Case Study</button>
-                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card" data-category="ui">
-            <div class="project-image">
-              <span class="project-badge-top">STUDI KASUS #03</span>
-              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="220" fill="#0a0b10"/>
-                <circle cx="200" cy="110" r="75" fill="none" stroke="rgba(168,85,247,0.4)" stroke-width="2" stroke-dasharray="6 6"/>
-                <rect x="110" y="75" width="180" height="70" rx="14" fill="rgba(99,102,241,0.25)" stroke="#6366f1" stroke-width="2"/>
-                <text x="200" y="116" font-family="'Outfit', sans-serif" font-weight="700" font-size="16" fill="#fff" text-anchor="middle">CYBER GLASS DESIGN</text>
-              </svg>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">Design System</span>
-                <span class="tag">Glassmorphism</span>
-                <span class="tag">UI/UX Component</span>
-              </div>
-              <h3>Cyber-Glass Design System &amp; UI Tokens</h3>
-              <p>Sistem desain antarmuka modular berkonsep glassmorphic dengan standar tokens warna ergonomis, rasio kontras WCAG AA, dan dokumentasi komponen lengkap.</p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <strong>WCAG AA</strong>
-                  Contrast Compliance
-                </div>
-                <div class="metric-item">
-                  <strong>40+ Tokens</strong>
-                  Reusable Components
-                </div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-case="cyber-glass">📄 Detail Case Study</button>
-                <a href="#hero" class="project-link">🔗 Preview Desain</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge-top">STUDI KASUS #04</span>
-              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="220" fill="#11131c"/>
-                <rect x="40" y="40" width="140" height="140" rx="10" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
-                <rect x="200" y="40" width="160" height="65" rx="8" fill="rgba(6,182,212,0.15)"/>
-                <rect x="200" y="115" width="160" height="65" rx="8" fill="rgba(99,102,241,0.15)"/>
-              </svg>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">RESTful API</span>
-                <span class="tag">Full-Stack Architecture</span>
-                <span class="tag">E-Commerce</span>
-              </div>
-              <h3>Cloud-Ready E-Commerce Architecture</h3>
-              <p>Arsitektur platform perdagangan digital berskala tinggi dengan manajemen inventaris real-time, dasbor admin terintegrasi, dan keamanan pertukaran data REST API.</p>
-              <div class="project-metrics">
-                <div class="metric-item">
-                  <strong>Modular</strong>
-                  Clean Architecture
-                </div>
-                <div class="metric-item">
-                  <strong>Secure</strong>
-                  Validated API Flow
-                </div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-case="ecommerce">📄 Detail Case Study</button>
-                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card" data-category="desktop">
-            <div class="project-image">
-              <span class="project-badge-top">STUDI KASUS #05</span>
-              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="220" fill="#0f111a"/>
-                <path d="M80 150 L140 70 L200 130 L280 60 L320 100" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="140" cy="70" r="6" fill="#10b981"/>
-                <circle cx="280" cy="60" r="6" fill="#10b981"/>
-              </svg>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
+                <span class="tag">GUI Event-Driven</span>
                 <span class="tag">System Engineering</span>
-                <span class="tag">Automated Testing</span>
-                <span class="tag">Quality Assurance</span>
               </div>
-              <h3>Automated Software Quality Inspection Tool</h3>
-              <p>Perangkat inspeksi pengujian perangkat lunak otomatis untuk menganalisis integritas data, validasi alur logika, dan pengujian keandalan sistem.</p>
+              <h3>Aplikasi Desktop &amp; Manajemen Form GUI</h3>
+              <p>Pengembangan perangkat lunak berbasis sistem desktop antarmuka GUI untuk pemrosesan data, kalkulasi logis, serta rekapitulasi lokal.</p>
               <div class="project-metrics">
-                <div class="metric-item">
-                  <strong>100%</strong>
-                  Verifiable Test Path
-                </div>
-                <div class="metric-item">
-                  <strong>Reliable</strong>
-                  Deterministic Execution
-                </div>
+                <div class="metric-item"><strong>Native App</strong>Cepat &amp; Ringan</div>
+                <div class="metric-item"><strong>Event-Driven</strong>Arsitektur GUI</div>
               </div>
               <div class="project-links">
-                <button class="btn-case-study" data-case="testing-tool">📄 Detail Case Study</button>
-                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
+                <button class="btn-case-study" data-tutorial="desktop-gui">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/tugas1-pemrograman-desktop" target="_blank" class="project-link">⭐ Repo GitHub</a>
               </div>
             </div>
           </div>
 
-          <!-- Project 6 -->
+          <!-- Repo 8: CRUD Kampus Simple -->
           <div class="project-card" data-category="web">
             <div class="project-image">
-              <span class="project-badge-top">STUDI KASUS #06</span>
-              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="220" fill="#11131c"/>
-                <text x="200" y="115" font-family="'Fira Code', monospace" font-size="28" font-weight="700" fill="#6366f1" text-anchor="middle">&lt;Wahyu.dev /&gt;</text>
+              <span class="project-badge-top">PUBLIC REPO • REST API</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#11131c"/>
+                <text x="200" y="110" font-family="'Fira Code', monospace" font-size="22" font-weight="700" fill="#6366f1" text-anchor="middle">CRUD / REST API</text>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-tags">
-                <span class="tag">GitHub Pages</span>
-                <span class="tag">Interactive Portfolio</span>
-                <span class="tag">Vanilla JS</span>
+                <span class="tag">CRUD Architecture</span>
+                <span class="tag">Database SQL</span>
+                <span class="tag">Backend Web</span>
               </div>
-              <h3>Ultra-Professional Developer Portfolio Platform</h3>
-              <p>Website portofolio profesional interaktif berteknologi HTML5, Vanilla CSS modern, dan JavaScript tanpa ketergantungan library berat, teroptimasi untuk GitHub Pages.</p>
+              <h3>Sistem CRUD &amp; REST API Manajemen Akademik</h3>
+              <p>Arsitektur penanganan data akademik kampus dengan operasi lengkap Create, Read, Update, Delete serta validasi integritas basis data.</p>
               <div class="project-metrics">
-                <div class="metric-item">
-                  <strong>0 Dependencies</strong>
-                  Pure Lightweight Code
-                </div>
-                <div class="metric-item">
-                  <strong>100/100</strong>
-                  SEO &amp; Accessibility
-                </div>
+                <div class="metric-item"><strong>RESTful API</strong>Endpoint Terstruktur</div>
+                <div class="metric-item"><strong>Clean Logic</strong>Query Teroptimasi</div>
               </div>
               <div class="project-links">
-                <button class="btn-case-study" data-case="portfolio-platform">📄 Detail Case Study</button>
-                <a href="https://github.com/wahyu2810/wahyu.github.io" target="_blank" class="project-link">⭐ Repo GitHub</a>
+                <button class="btn-case-study" data-tutorial="crud-kampus">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/CRUD-Kampus-Simple" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 9: PAWF (Pengembangan Aplikasi Web Framework) -->
+          <div class="project-card" data-category="devops">
+            <div class="project-image">
+              <span class="project-badge-top">PUBLIC REPO • FRAMEWORK MVC</span>
+              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="210" fill="#0f111a"/>
+                <text x="200" y="110" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" fill="#a855f7" text-anchor="middle">MVC FRAMEWORK ARCH</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">MVC Architecture</span>
+                <span class="tag">Web Framework</span>
+                <span class="tag">Routing Engine</span>
+              </div>
+              <h3>Arsitektur Web Framework MVC (PAWF)</h3>
+              <p>Studi penerapan pola rancang Model-View-Controller (MVC), routing dinamis, middleware sesi, serta pemodelan ORM pada aplikasi web modern.</p>
+              <div class="project-metrics">
+                <div class="metric-item"><strong>Modular MVC</strong>Clean Separation</div>
+                <div class="metric-item"><strong>Secure Routing</strong>Terproteksi</div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-tutorial="pawf-mvc">📖 Tutorial Cara Membuat</button>
+                <a href="https://github.com/wahyunoerrahmat/pawf" target="_blank" class="project-link">⭐ Repo GitHub</a>
               </div>
             </div>
           </div>
@@ -600,22 +644,23 @@
     </section>
 
     <!-- ======================================================================
-         Interactive Case Study Modal Dialog
+         Interactive Step-by-Step Tutorial Modal Dialog (`#caseModal`)
          ====================================================================== -->
     <div class="modal-overlay" id="caseModal">
       <div class="modal-content">
         <div class="modal-header">
           <div>
-            <span class="section-tag" style="margin-bottom:0.2rem;" id="modalTag">CASE STUDY OVERVIEW</span>
-            <h3 style="font-size:1.5rem; color:var(--text-main);" id="modalTitle">Judul Proyek</h3>
+            <span class="section-tag" style="margin-bottom:0.2rem;" id="modalTag">TUTORIAL CARA MEMBUAT PROYEK</span>
+            <h3 style="font-size:1.5rem; color:var(--text-main);" id="modalTitle">Judul Tutorial Proyek</h3>
           </div>
           <button class="modal-close" id="modalClose" aria-label="Tutup Modal">✕</button>
         </div>
         <div class="modal-body" id="modalBody">
-          <!-- Dynamic Content Loaded via JS -->
+          <!-- Step-by-Step Tutorial Content Loaded dynamically via JS -->
         </div>
       </div>
     </div>
+
 
     <!-- ======================================================================
          Engineering Activity & Contribution Matrix Section (`#activity`)
