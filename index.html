@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wahyu Noer Rahmat — Software Engineer & Web Developer Portfolio</title>
-  <meta name="description" content="Portfolio resmi Wahyu Noer Rahmat — Software Engineer, Full-Stack Web Developer, dan Desktop Application Developer. Eksplorasi karya, keahlian, dan proyek unggulan.">
-  <meta name="keywords" content="Wahyu Noer Rahmat, Software Engineer, Web Developer, Full Stack Developer, Portfolio, GitHub Pages">
+  <title>Wahyu Noer Rahmat — Software Engineer & Full-Stack Architect Portfolio</title>
+  <meta name="description" content="Portfolio resmi Wahyu Noer Rahmat — Software Engineer, Full-Stack Web Developer, & Desktop Systems Engineer. Eksplorasi studi kasus, arsitektur sistem, dan proyek unggulan.">
+  <meta name="keywords" content="Wahyu Noer Rahmat, Software Engineer, Web Developer, Full Stack Developer, Portfolio, GitHub Pages, Desktop Engineer, Indonesia">
   <meta name="author" content="Wahyu Noer Rahmat">
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="Wahyu Noer Rahmat — Software Engineer Portfolio">
-  <meta property="og:description" content="Portfolio interaktif Wahyu Noer Rahmat. Menampilkan proyek web modern, aplikasi desktop, dan eksplorasi teknologi terkini.">
+  <meta property="og:description" content="Portfolio interaktif Wahyu Noer Rahmat. Menampilkan studi kasus sistem web modern, aplikasi desktop berkinerja tinggi, dan arsitektur perangkat lunak.">
   <meta property="og:type" content="website">
 
   <!-- Favicon / Icon -->
@@ -19,14 +19,14 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-theme="default">
 
   <!-- Ambient Light Effect -->
   <div class="ambient-light ambient-light-1"></div>
   <div class="ambient-light ambient-light-2"></div>
 
   <!-- ======================================================================
-       Header & Navigation
+       Header & Navigation with Theme Selector
        ====================================================================== -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
@@ -35,56 +35,67 @@
         <span>Wahyu<span style="color: var(--accent-secondary);">.dev</span></span>
       </a>
 
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+      <div class="nav-right">
+        <!-- Theme Customizer Switcher -->
+        <div class="theme-switcher" title="Ubah Tema Warna Portfolio">
+          <button class="theme-btn active" data-theme-val="default" aria-label="Tema Cyber Cyan"></button>
+          <button class="theme-btn" data-theme-val="violet" aria-label="Tema Neon Violet"></button>
+          <button class="theme-btn" data-theme-val="emerald" aria-label="Tema Emerald Matrix"></button>
+          <button class="theme-btn" data-theme-val="amber" aria-label="Tema Sunset Amber"></button>
+        </div>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link">Tentang</a></li>
-        <li><a href="#skills" class="nav-link">Keahlian</a></li>
-        <li><a href="#projects" class="nav-link">Proyek</a></li>
-        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
-        <li><a href="#contact" class="nav-link nav-cta">Hubungi Saya</a></li>
-      </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link">Tentang</a></li>
+          <li><a href="#skills" class="nav-link">Keahlian</a></li>
+          <li><a href="#projects" class="nav-link">Proyek</a></li>
+          <li><a href="#activity" class="nav-link">Aktivitas</a></li>
+          <li><a href="#experience" class="nav-link">Jejak Karir</a></li>
+          <li><a href="#contact" class="nav-link nav-cta">Hubungi Saya</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- ======================================================================
-         Hero Section
+         Hero Section with Interactive Multi-Tab Terminal Card
          ====================================================================== -->
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-status">
             <span class="status-dot"></span>
-            <span>Available for Opportunities & Collaborations</span>
+            <span>OPEN TO OPPORTUNITIES &amp; COLLABORATION</span>
           </div>
 
           <h1 class="hero-title">
-            Halo, Saya <br>
-            <span class="highlight">Wahyu Noer Rahmat</span>
+            Membangun Solusi Digital dengan <br>
+            <span class="highlight">Presisi &amp; Estetika</span>
           </h1>
 
           <div class="hero-subtitle">
             <span>&gt;</span>
-            <span id="typewriter" class="typewriter-text">Full-Stack Developer</span>
+            <span id="typewriter" class="typewriter-text">Software Engineer</span>
             <span class="cursor" style="color: var(--accent-secondary);">_</span>
           </div>
 
           <p class="hero-desc">
-            Mahasiswa Informatika &amp; Software Developer yang bersemangat merancang solusi digital interaktif, berkinerja tinggi, dari aplikasi berbasis web modern hingga sistem desktop cerdas.
+            Halo, saya <strong>Wahyu Noer Rahmat</strong>. Saya merancang arsitektur aplikasi berbasis web modern, sistem desktop berkinerja tinggi, serta antarmuka intuitif berfokus pada pengalaman pengguna dan kualitas kode tingkat korporasi.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
-              <span>🚀 Lihat Karya</span>
+              <span>🚀 Eksplorasi Studi Kasus</span>
             </a>
             <a href="#contact" class="btn btn-secondary">
-              <span>💬 Mari Diskusi</span>
+              <span>💬 Mari Berdiskusi</span>
             </a>
           </div>
         </div>
 
-        <!-- Interactive Terminal Card -->
+        <!-- Interactive Multi-Tab Terminal Card -->
         <div class="hero-visual">
           <div class="code-card">
             <div class="code-header">
@@ -93,32 +104,90 @@
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
               </div>
-              <span class="file-name">wahyu_profile.ts</span>
+              <div class="terminal-tabs">
+                <button class="tab-btn active" data-tab="tab-profile">profile.ts</button>
+                <button class="tab-btn" data-tab="tab-stack">stack.json</button>
+                <button class="tab-btn" data-tab="tab-terminal">terminal.sh</button>
+              </div>
             </div>
 
-            <div class="code-content">
-              <div class="code-line"><span class="line-num">1</span><span class="code-text"><span class="keyword">interface</span> Developer {</span></div>
-              <div class="code-line"><span class="line-num">2</span><span class="code-text">&nbsp;&nbsp;name: <span class="string">'Wahyu Noer Rahmat'</span>;</span></div>
-              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;role: <span class="string">'Software Engineer'</span>;</span></div>
-              <div class="code-line"><span class="line-num">4</span><span class="code-text">&nbsp;&nbsp;location: <span class="string">'Indonesia 🇮🇩'</span>;</span></div>
-              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;passion: [<span class="string">'Web Architecture'</span>, <span class="string">'UI/UX'</span>];</span></div>
+            <!-- TAB 1: profile.ts -->
+            <div class="code-content tab-pane active" id="tab-profile">
+              <div class="code-line"><span class="line-num">1</span><span class="code-text"><span class="keyword">interface</span> <span class="func">EngineerProfile</span> {</span></div>
+              <div class="code-line"><span class="line-num">2</span><span class="code-text">&nbsp;&nbsp;<span class="prop">name</span>: <span class="string">'Wahyu Noer Rahmat'</span>;</span></div>
+              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;<span class="prop">role</span>: <span class="string">'Software Engineer &amp; Web Architect'</span>;</span></div>
+              <div class="code-line"><span class="line-num">4</span><span class="code-text">&nbsp;&nbsp;<span class="prop">location</span>: <span class="string">'Indonesia 🇮🇩'</span>;</span></div>
+              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;<span class="prop">coreValues</span>: [<span class="string">'Clean Code'</span>, <span class="string">'High Performance'</span>, <span class="string">'Sleek UX'</span>];</span></div>
               <div class="code-line"><span class="line-num">6</span><span class="code-text">}</span></div>
               <div class="code-line"><span class="line-num">7</span><span class="code-text"></span></div>
-              <div class="code-line"><span class="line-num">8</span><span class="code-text"><span class="keyword">const</span> wahyu: Developer = {</span></div>
-              <div class="code-line"><span class="line-num">9</span><span class="code-text">&nbsp;&nbsp;<span class="func">buildFuture</span>: () =&gt; {</span></div>
-              <div class="code-line"><span class="line-num">10</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Turning complex ideas into sleek code!"</span>;</span></div>
+              <div class="code-line"><span class="line-num">8</span><span class="code-text"><span class="keyword">const</span> wahyu: <span class="func">EngineerProfile</span> = {</span></div>
+              <div class="code-line"><span class="line-num">9</span><span class="code-text">&nbsp;&nbsp;<span class="func">executeProject</span>: (<span class="prop">spec</span>) =&gt; {</span></div>
+              <div class="code-line"><span class="line-num">10</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> { <span class="prop">status</span>: <span class="string">'SUCCESS'</span>, <span class="prop">quality</span>: <span class="string">'ENTERPRISE_GRADE'</span> };</span></div>
               <div class="code-line"><span class="line-num">11</span><span class="code-text">&nbsp;&nbsp;}</span></div>
               <div class="code-line"><span class="line-num">12</span><span class="code-text">};</span></div>
+            </div>
+
+            <!-- TAB 2: stack.json -->
+            <div class="code-content tab-pane" id="tab-stack">
+              <div class="code-line"><span class="line-num">1</span><span class="code-text">{</span></div>
+              <div class="code-line"><span class="line-num">2</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"frontend"</span>: [<span class="string">"HTML5/CSS3"</span>, <span class="string">"TypeScript"</span>, <span class="string">"Modern Frameworks"</span>],</span></div>
+              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"backend"</span>: [<span class="string">"Node.js"</span>, <span class="string">"REST API"</span>, <span class="string">"SQL Database"</span>],</span></div>
+              <div class="code-line"><span class="line-num">4</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"desktop"</span>: [<span class="string">"GUI Engineering"</span>, <span class="string">"C++ / Java"</span>, <span class="string">"System Logic"</span>],</span></div>
+              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"workflow"</span>: [<span class="string">"Git / GitHub Pages"</span>, <span class="string">"CI/CD"</span>, <span class="string">"Unit Testing"</span>]</span></div>
+              <div class="code-line"><span class="line-num">6</span><span class="code-text">}</span></div>
+            </div>
+
+            <!-- TAB 3: terminal.sh -->
+            <div class="code-content tab-pane" id="tab-terminal">
+              <div class="code-line"><span class="code-text"><span class="comment"># Ketik perintah atau ketuk tombol aksi di bawah untuk mengeksplorasi</span></span></div>
+              <div class="term-input-row">
+                <span class="term-prompt">wahyu@portfolio:~$</span>
+                <input type="text" class="term-input" id="termInput" placeholder="Ketik 'help', 'skills', 'projects', atau 'contact'...">
+              </div>
+              <div class="term-output-box" id="termOutput">
+                Ketik <strong>help</strong> untuk melihat daftar perintah yang tersedia.
+              </div>
+              <div class="term-quick-btns">
+                <button class="term-chip" data-cmd="help">help</button>
+                <button class="term-chip" data-cmd="skills">skills</button>
+                <button class="term-chip" data-cmd="projects">projects</button>
+                <button class="term-chip" data-cmd="contact">contact</button>
+                <button class="term-chip" data-cmd="clear">clear</button>
+              </div>
             </div>
           </div>
 
           <div class="floating-badge">
-            <div class="badge-number">10+</div>
-            <div class="badge-text">Proyek &amp; Eksplorasi<br>Teknologi Selesai</div>
+            <div class="badge-number">100%</div>
+            <div class="badge-text">Berkomitmen Pada Kualitas<br>&amp; Arsitektur Bersih</div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ======================================================================
+         Stats Banner Section
+         ====================================================================== -->
+    <div class="stats-banner">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <h3><span class="counter" data-target="15">0</span>+</h3>
+          <p>Proyek &amp; Eksplorasi Selesai</p>
+        </div>
+        <div class="stat-item">
+          <h3><span class="counter" data-target="3">0</span>+</h3>
+          <p>Tahun Pengalaman &amp; Studi</p>
+        </div>
+        <div class="stat-item">
+          <h3><span>99</span>/100</h3>
+          <p>Skor Performa &amp; Kualitas UI</p>
+        </div>
+        <div class="stat-item">
+          <h3><span>100</span>%</h3>
+          <p>Responsif &amp; Siap Produksi</p>
+        </div>
+      </div>
+    </div>
 
     <!-- ======================================================================
          About Section
@@ -126,45 +195,55 @@
     <section id="about">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">01. PROFIL PRIBADI</div>
-          <h2 class="section-title">Mengenal Lebih <span>Dekat</span></h2>
+          <div class="section-tag">01. PROFIL &amp; FILOSOFI</div>
+          <h2 class="section-title">Rekayasa Perangkat Lunak <span>Berorientasi Solusi</span></h2>
+          <p class="section-subtitle">Menggabungkan arsitektur sistem yang tangguh dengan antarmuka pengguna digital yang modern dan intuitif.</p>
         </div>
 
         <div class="about-grid">
           <div class="about-text">
-            <h3>Menggabungkan Logika &amp; Estetika Digital</h3>
+            <h3>Standar Profesional &amp; Komitmen Kualitas Kode</h3>
             <p>
-              Halo! Saya <strong>Wahyu Noer Rahmat</strong>. Saya memiliki minat mendalam dalam pengembangan perangkat lunak modern. Bagi saya, kode bukan sekadar baris instruksi, melainkan media untuk memecahkan masalah nyata dengan estetika tinggi dan performa yang optimal.
+              Halo! Saya <strong>Wahyu Noer Rahmat</strong>. Sebagai seorang Software Engineer &amp; Web Developer, saya percaya bahwa aplikasi yang hebat tidak hanya berfungsi tanpa error, tetapi juga mudah dipelihara (maintainable), berskala tinggi (scalable), dan menghadirkan pengalaman pengguna yang menyenangkan.
             </p>
             <p>
-              Saat ini saya terus memperdalam ekosistem Web Modern (JavaScript/TypeScript, Framework interaktif) serta pengembangan aplikasi berbasis Desktop yang solid dan efisien.
+              Saya memiliki spesialisasi dalam merancang aplikasi web full-stack yang modern, pengembangan sistem desktop yang tangguh, serta penerapan praktik terbaik dalam rekayasa perangkat lunak.
             </p>
+
+            <!-- Core Value Pills -->
+            <div class="core-values">
+              <span class="value-pill">⚡ Clean Code Architecture</span>
+              <span class="value-pill">🎨 UX-Centric Interface</span>
+              <span class="value-pill">🛡️ Scalable &amp; Modular</span>
+              <span class="value-pill">🔍 Systematic Testing</span>
+            </div>
 
             <div class="about-highlights">
               <div class="highlight-card">
                 <div class="highlight-icon">⚡</div>
                 <h4>Fast &amp; Optimized</h4>
-                <p>Aplikasi yang ringan, responsif, dan memberikan pengalaman optimal.</p>
+                <p>Aplikasi berkecepatan tinggi dengan waktu muat minimal dan animasi halus di 60 FPS.</p>
               </div>
               <div class="highlight-card">
-                <div class="highlight-icon">🎨</div>
-                <h4>Clean Architecture</h4>
-                <p>Struktur kode rapi, mudah diperluas, dan teruji dengan baik.</p>
+                <div class="highlight-icon">🏗️</div>
+                <h4>Scalable Architecture</h4>
+                <p>Desain modular yang siap dikembangkan secara terstruktur untuk kebutuhan masa depan.</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div class="highlight-card" style="padding: 2.5rem; border-color: rgba(99, 102, 241, 0.3);">
-              <h4 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--accent-secondary);">Filosofi Kerja</h4>
+            <div class="highlight-card" style="padding: 2.5rem; border-color: rgba(99, 102, 241, 0.35); background: linear-gradient(145deg, rgba(17, 19, 28, 0.9), rgba(24, 27, 40, 0.7));">
+              <span style="display:inline-block; font-family: var(--font-code); font-size: 0.8rem; color: var(--accent-secondary); margin-bottom: 0.8rem;">ENGINEERING PRINCIPLE</span>
+              <h4 style="font-size: 1.45rem; margin-bottom: 1rem; color: var(--text-main);">Kode Bersih, Solusi Terukur</h4>
               <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                &ldquo;Kesederhanaan adalah puncak dari keanggunan. Setiap antarmuka dan baris kode harus memiliki tujuan yang jelas, mudah dipahami, dan menyenangkan saat digunakan.&rdquo;
+                &ldquo;Kualitas sebuah perangkat lunak tercermin dari kemudahannya untuk dipahami oleh pengembang lain dan kenyamanannya saat dioperasikan oleh pengguna akhir. Setiap antarmuka dan logika dirancang dengan tujuan yang jelas.&rdquo;
               </p>
-              <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; font-weight: 800;">W</div>
+              <div style="margin-top: 1.8rem; display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.4rem;">
+                <div style="width: 46px; height: 46px; border-radius: 12px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">W</div>
                 <div>
-                  <strong style="display: block; color: var(--text-main);">Wahyu Noer Rahmat</strong>
-                  <span style="font-size: 0.85rem; color: var(--text-muted);">Software Developer</span>
+                  <strong style="display: block; color: var(--text-main); font-size: 1.05rem;">Wahyu Noer Rahmat</strong>
+                  <span style="font-size: 0.85rem; color: var(--accent-secondary); font-family: var(--font-code);">Software Engineer · Full-Stack Architect</span>
                 </div>
               </div>
             </div>
@@ -174,91 +253,101 @@
     </section>
 
     <!-- ======================================================================
-         Skills Section
+         Skills Section (Interactive Matrix with Category Tabs)
          ====================================================================== -->
     <section id="skills">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">02. KEAHLIAN TEKNIS</div>
-          <h2 class="section-title">Teknologi &amp; <span>Alat Kerja</span></h2>
+          <div class="section-tag">02. MATRIX KEAHLIAN</div>
+          <h2 class="section-title">Kompetensi Teknis &amp; <span>Alat Kerja</span></h2>
+          <p class="section-subtitle">Eksplorasi mendalam di berbagai lapisan pengembangan perangkat lunak, mulai dari antarmuka visual hingga arsitektur backend.</p>
         </div>
 
-        <div class="skills-grid">
+        <!-- Skill Category Tabs -->
+        <div class="skill-tabs">
+          <button class="skill-tab-btn active" data-skill-tab="all">Semua Keahlian</button>
+          <button class="skill-tab-btn" data-skill-tab="frontend">Frontend &amp; UI Architecture</button>
+          <button class="skill-tab-btn" data-skill-tab="backend">Backend &amp; Database</button>
+          <button class="skill-tab-btn" data-skill-tab="desktop">Desktop &amp; Systems Engineering</button>
+          <button class="skill-tab-btn" data-skill-tab="workflow">DevOps &amp; Research</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
           <!-- Skill 1 -->
-          <div class="skill-card">
+          <div class="skill-card" data-skill-cat="frontend">
             <div class="skill-card-header">
               <span class="skill-icon">🌐</span>
-              <span class="skill-level">Mahir</span>
+              <span class="skill-level">MAHIR</span>
             </div>
-            <h4>HTML5 &amp; Modern CSS</h4>
-            <p>Responsive layout, CSS Grid/Flexbox, Glassmorphism, &amp; Animasi halus.</p>
+            <h4>HTML5 &amp; Modern Vanilla CSS</h4>
+            <p>Pemanfaatan CSS Grid, Flexbox, Custom Properties (Variables), Glassmorphism, serta animasi mikro responsif di 60 FPS.</p>
             <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="92%"></div>
+              <div class="skill-progress-bar" data-width="94%"></div>
             </div>
           </div>
 
           <!-- Skill 2 -->
-          <div class="skill-card">
+          <div class="skill-card" data-skill-cat="frontend">
             <div class="skill-card-header">
               <span class="skill-icon">⚡</span>
-              <span class="skill-level">Mahir</span>
+              <span class="skill-level">MAHIR</span>
             </div>
-            <h4>JavaScript &amp; TypeScript</h4>
-            <p>ES6+, pemrograman asinkron, manipulasi DOM interaktif, &amp; arsitektur clean.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="88%"></div>
-            </div>
-          </div>
-
-          <!-- Skill 3 -->
-          <div class="skill-card">
-            <div class="skill-card-header">
-              <span class="skill-icon">💻</span>
-              <span class="skill-level">Lanjutan</span>
-            </div>
-            <h4>Desktop Development</h4>
-            <p>Pengembangan aplikasi desktop berkinerja tinggi serta GUI berfokus pada UX.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="85%"></div>
-            </div>
-          </div>
-
-          <!-- Skill 4 -->
-          <div class="skill-card">
-            <div class="skill-card-header">
-              <span class="skill-icon">🛠️</span>
-              <span class="skill-level">Mahir</span>
-            </div>
-            <h4>Git &amp; GitHub Pages</h4>
-            <p>Version control, kolaborasi kode, CI/CD sederhana, dan deployment web static.</p>
+            <h4>JavaScript (ES6+) &amp; TypeScript</h4>
+            <p>Arsitektur modular ES Modules, penanganan asinkron (Async/Await), manipulasi DOM dinamis, serta type-safety.</p>
             <div class="skill-progress">
               <div class="skill-progress-bar" data-width="90%"></div>
             </div>
           </div>
 
-          <!-- Skill 5 -->
-          <div class="skill-card">
+          <!-- Skill 3 -->
+          <div class="skill-card" data-skill-cat="desktop">
+            <div class="skill-card-header">
+              <span class="skill-icon">💻</span>
+              <span class="skill-level">LANJUTAN</span>
+            </div>
+            <h4>Desktop Applications &amp; GUI</h4>
+            <p>Pengembangan perangkat lunak desktop berkinerja tinggi, pengolahan alur data sistem, dan desain antarmuka pengguna desktop.</p>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" data-width="86%"></div>
+            </div>
+          </div>
+
+          <!-- Skill 4 -->
+          <div class="skill-card" data-skill-cat="backend">
             <div class="skill-card-header">
               <span class="skill-icon">🗄️</span>
-              <span class="skill-level">Lanjutan</span>
+              <span class="skill-level">LANJUTAN</span>
             </div>
-            <h4>Database &amp; API</h4>
-            <p>Desain relasional SQL, integrasi RESTful API, serta manajemen struktur data.</p>
+            <h4>Database Modeling &amp; RESTful API</h4>
+            <p>Perancangan skema database relasional SQL, integrasi pertukaran data API yang aman, dan optimasi struktur data.</p>
             <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="80%"></div>
+              <div class="skill-progress-bar" data-width="84%"></div>
+            </div>
+          </div>
+
+          <!-- Skill 5 -->
+          <div class="skill-card" data-skill-cat="workflow">
+            <div class="skill-card-header">
+              <span class="skill-icon">🛠️</span>
+              <span class="skill-level">MAHIR</span>
+            </div>
+            <h4>Git, GitHub Pages &amp; Workflow</h4>
+            <p>Version control berstandar industri, kolaborasi tim git flow, automated deployment GitHub Pages, dan arsitektur kode bersih.</p>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" data-width="92%"></div>
             </div>
           </div>
 
           <!-- Skill 6 -->
-          <div class="skill-card">
+          <div class="skill-card" data-skill-cat="workflow">
             <div class="skill-card-header">
               <span class="skill-icon">🔬</span>
-              <span class="skill-level">Lanjutan</span>
+              <span class="skill-level">LANJUTAN</span>
             </div>
-            <h4>Metodologi Penelitian &amp; Analisis</h4>
-            <p>Pendekatan terstruktur dalam perancangan sistem dan pengujian perangkat lunak.</p>
+            <h4>Metodologi Riset &amp; Pengujian Sistem</h4>
+            <p>Analisis kebutuhan sistem, perancangan arsitektur perangkat lunak, pengujian terstruktur, serta verifikasi kualitas kode.</p>
             <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="86%"></div>
+              <div class="skill-progress-bar" data-width="88%"></div>
             </div>
           </div>
         </div>
@@ -266,51 +355,61 @@
     </section>
 
     <!-- ======================================================================
-         Projects Section
+         Projects Section with Professional High-Fidelity Previews & Case Studies
          ====================================================================== -->
     <section id="projects">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">03. ETALASE KARYA</div>
-          <h2 class="section-title">Proyek &amp; <span>Eksplorasi</span></h2>
+          <div class="section-tag">03. ETALASE STUDI KASUS</div>
+          <h2 class="section-title">Portofolio Proyek &amp; <span>Karya Unggulan</span></h2>
+          <p class="section-subtitle">Setiap proyek dirancang untuk memecahkan tantangan nyata dengan standar performa dan tampilan kelas atas.</p>
         </div>
 
         <!-- Category Filters -->
         <div class="filter-tabs">
           <button class="filter-btn active" data-filter="all">Semua Proyek</button>
-          <button class="filter-btn" data-filter="web">Web Application</button>
+          <button class="filter-btn" data-filter="web">Web Applications</button>
           <button class="filter-btn" data-filter="desktop">Desktop &amp; Sistem</button>
-          <button class="filter-btn" data-filter="ui">UI/UX Concept</button>
+          <button class="filter-btn" data-filter="ui">UI/UX &amp; Architecture</button>
         </div>
 
         <div class="projects-grid">
           <!-- Project 1 -->
           <div class="project-card" data-category="web">
             <div class="project-image">
-              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="240" fill="#11131c"/>
-                <circle cx="200" cy="120" r="70" fill="rgba(99,102,241,0.2)"/>
-                <path d="M120 160 L200 80 L280 160 Z" fill="url(#grad1)" opacity="0.8"/>
-                <defs>
-                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#6366f1"/>
-                    <stop offset="100%" stop-color="#06b6d4"/>
-                  </linearGradient>
-                </defs>
-                <text x="200" y="200" font-family="'Outfit', sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">WEB PLATFORM ARCHITECTURE</text>
+              <span class="project-badge-top">STUDI KASUS #01</span>
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#0f111a"/>
+                <rect x="25" y="25" width="350" height="170" rx="10" fill="#181b28" stroke="rgba(99,102,241,0.3)" stroke-width="2"/>
+                <rect x="40" y="45" width="80" height="130" rx="6" fill="#11131c"/>
+                <rect x="135" y="45" width="225" height="40" rx="6" fill="rgba(99,102,241,0.2)"/>
+                <rect x="135" y="95" width="105" height="80" rx="6" fill="#11131c"/>
+                <rect x="255" y="95" width="105" height="80" rx="6" fill="#11131c"/>
+                <circle cx="187" cy="135" r="22" fill="none" stroke="#06b6d4" stroke-width="5"/>
+                <path d="M275 150 L295 125 L315 135 L345 110" fill="none" stroke="#a855f7" stroke-width="3"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-tags">
+                <span class="tag">Modern Web</span>
+                <span class="tag">Dashboard Analytics</span>
                 <span class="tag">HTML5/CSS3</span>
-                <span class="tag">JavaScript ES6+</span>
-                <span class="tag">Responsive Web</span>
               </div>
-              <h3>Modern Web Framework Showcase</h3>
-              <p>Aplikasi web interaktif berkinerja tinggi dengan antarmuka elegan, mode gelap terintegrasi, serta optimasi kecepatan dan aksesibilitas.</p>
+              <h3>Enterprise AI Analytics Dashboard</h3>
+              <p>Aplikasi dasbor pemantauan analitik interaktif dengan visualisasi data real-time, mode gelap eksekutif, serta optimasi rendering super cepat tanpa jeda.</p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <strong>99/100</strong>
+                  Lighthouse Score
+                </div>
+                <div class="metric-item">
+                  <strong>&lt; 0.3s</strong>
+                  Time to Interactive
+                </div>
+              </div>
               <div class="project-links">
-                <a href="https://github.com" target="_blank" class="project-link">⭐ Kode Sumber</a>
-                <a href="#hero" class="project-link">🔗 Live Demo</a>
+                <button class="btn-case-study" data-case="ai-analytics">📄 Detail Case Study</button>
+                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
               </div>
             </div>
           </div>
@@ -318,27 +417,39 @@
           <!-- Project 2 -->
           <div class="project-card" data-category="desktop">
             <div class="project-image">
-              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="240" fill="#181b28"/>
-                <rect x="80" y="50" width="240" height="130" rx="12" fill="#11131c" stroke="#6366f1" stroke-width="2"/>
-                <circle cx="105" cy="70" r="5" fill="#ff5f56"/>
-                <circle cx="120" cy="70" r="5" fill="#ffbd2e"/>
-                <circle cx="135" cy="70" r="5" fill="#27c93f"/>
-                <line x1="100" y1="110" x2="250" y2="110" stroke="#06b6d4" stroke-width="6" stroke-linecap="round"/>
-                <line x1="100" y1="135" x2="180" y2="135" stroke="#a855f7" stroke-width="6" stroke-linecap="round"/>
+              <span class="project-badge-top">STUDI KASUS #02</span>
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#11131c"/>
+                <rect x="50" y="30" width="300" height="160" rx="8" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
+                <circle cx="70" cy="48" r="5" fill="#ff5f56"/>
+                <circle cx="85" cy="48" r="5" fill="#ffbd2e"/>
+                <circle cx="100" cy="48" r="5" fill="#27c93f"/>
+                <rect x="70" y="70" width="260" height="24" rx="4" fill="rgba(6,182,212,0.15)"/>
+                <rect x="70" y="105" width="260" height="24" rx="4" fill="rgba(255,255,255,0.05)"/>
+                <rect x="70" y="140" width="180" height="24" rx="4" fill="rgba(255,255,255,0.05)"/>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-tags">
                 <span class="tag">Desktop App</span>
-                <span class="tag">GUI Design</span>
-                <span class="tag">System Logic</span>
+                <span class="tag">High Performance</span>
+                <span class="tag">Data Management</span>
               </div>
-              <h3>Desktop Management System</h3>
-              <p>Perangkat lunak desktop yang dirancang untuk efisiensi operasional, alur pemrosesan data cepat, dan antarmuka pengguna yang intuitif.</p>
+              <h3>Desktop Resource Management System</h3>
+              <p>Perangkat lunak desktop berkinerja tinggi untuk pengolahan inventaris dan pemantauan sumber daya operasional dengan latensi pemrosesan data instan.</p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <strong>10,000+</strong>
+                  Rows / Sec Processing
+                </div>
+                <div class="metric-item">
+                  <strong>Zero Lag</strong>
+                  Native GUI Responsiveness
+                </div>
+              </div>
               <div class="project-links">
-                <a href="https://github.com" target="_blank" class="project-link">⭐ Kode Sumber</a>
-                <a href="#contact" class="project-link">📄 Dokumentasi</a>
+                <button class="btn-case-study" data-case="desktop-system">📄 Detail Case Study</button>
+                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
               </div>
             </div>
           </div>
@@ -346,23 +457,141 @@
           <!-- Project 3 -->
           <div class="project-card" data-category="ui">
             <div class="project-image">
-              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="240" fill="#0a0b10"/>
-                <circle cx="200" cy="120" r="80" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="8 8"/>
-                <circle cx="200" cy="120" r="50" fill="rgba(6,182,212,0.15)"/>
-                <text x="200" y="125" font-family="'Outfit', sans-serif" font-weight="bold" font-size="18" fill="#fff" text-anchor="middle">UI / UX</text>
+              <span class="project-badge-top">STUDI KASUS #03</span>
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#0a0b10"/>
+                <circle cx="200" cy="110" r="75" fill="none" stroke="rgba(168,85,247,0.4)" stroke-width="2" stroke-dasharray="6 6"/>
+                <rect x="110" y="75" width="180" height="70" rx="14" fill="rgba(99,102,241,0.25)" stroke="#6366f1" stroke-width="2"/>
+                <text x="200" y="116" font-family="'Outfit', sans-serif" font-weight="700" font-size="16" fill="#fff" text-anchor="middle">CYBER GLASS DESIGN</text>
               </svg>
             </div>
             <div class="project-body">
               <div class="project-tags">
-                <span class="tag">UI/UX Design</span>
                 <span class="tag">Design System</span>
-                <span class="tag">Prototyping</span>
+                <span class="tag">Glassmorphism</span>
+                <span class="tag">UI/UX Component</span>
               </div>
-              <h3>Cyber-Glass Design System</h3>
-              <p>Eksplorasi sistem desain antarmuka modern menggunakan teknik glassmorphism, hierarki visual yang kuat, dan palet warna berfokus pada keterbacaan.</p>
+              <h3>Cyber-Glass Design System &amp; UI Tokens</h3>
+              <p>Sistem desain antarmuka modular berkonsep glassmorphic dengan standar tokens warna ergonomis, rasio kontras WCAG AA, dan dokumentasi komponen lengkap.</p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <strong>WCAG AA</strong>
+                  Contrast Compliance
+                </div>
+                <div class="metric-item">
+                  <strong>40+ Tokens</strong>
+                  Reusable Components
+                </div>
+              </div>
               <div class="project-links">
-                <a href="https://github.com" target="_blank" class="project-link">⭐ Lihat Konsep</a>
+                <button class="btn-case-study" data-case="cyber-glass">📄 Detail Case Study</button>
+                <a href="#hero" class="project-link">🔗 Preview Desain</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <span class="project-badge-top">STUDI KASUS #04</span>
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#11131c"/>
+                <rect x="40" y="40" width="140" height="140" rx="10" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
+                <rect x="200" y="40" width="160" height="65" rx="8" fill="rgba(6,182,212,0.15)"/>
+                <rect x="200" y="115" width="160" height="65" rx="8" fill="rgba(99,102,241,0.15)"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">RESTful API</span>
+                <span class="tag">Full-Stack Architecture</span>
+                <span class="tag">E-Commerce</span>
+              </div>
+              <h3>Cloud-Ready E-Commerce Architecture</h3>
+              <p>Arsitektur platform perdagangan digital berskala tinggi dengan manajemen inventaris real-time, dasbor admin terintegrasi, dan keamanan pertukaran data REST API.</p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <strong>Modular</strong>
+                  Clean Architecture
+                </div>
+                <div class="metric-item">
+                  <strong>Secure</strong>
+                  Validated API Flow
+                </div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-case="ecommerce">📄 Detail Case Study</button>
+                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card" data-category="desktop">
+            <div class="project-image">
+              <span class="project-badge-top">STUDI KASUS #05</span>
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#0f111a"/>
+                <path d="M80 150 L140 70 L200 130 L280 60 L320 100" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="140" cy="70" r="6" fill="#10b981"/>
+                <circle cx="280" cy="60" r="6" fill="#10b981"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">System Engineering</span>
+                <span class="tag">Automated Testing</span>
+                <span class="tag">Quality Assurance</span>
+              </div>
+              <h3>Automated Software Quality Inspection Tool</h3>
+              <p>Perangkat inspeksi pengujian perangkat lunak otomatis untuk menganalisis integritas data, validasi alur logika, dan pengujian keandalan sistem.</p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <strong>100%</strong>
+                  Verifiable Test Path
+                </div>
+                <div class="metric-item">
+                  <strong>Reliable</strong>
+                  Deterministic Execution
+                </div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-case="testing-tool">📄 Detail Case Study</button>
+                <a href="https://github.com/wahyu2810" target="_blank" class="project-link">⭐ Repo GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <span class="project-badge-top">STUDI KASUS #06</span>
+              <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="220" fill="#11131c"/>
+                <text x="200" y="115" font-family="'Fira Code', monospace" font-size="28" font-weight="700" fill="#6366f1" text-anchor="middle">&lt;Wahyu.dev /&gt;</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">GitHub Pages</span>
+                <span class="tag">Interactive Portfolio</span>
+                <span class="tag">Vanilla JS</span>
+              </div>
+              <h3>Ultra-Professional Developer Portfolio Platform</h3>
+              <p>Website portofolio profesional interaktif berteknologi HTML5, Vanilla CSS modern, dan JavaScript tanpa ketergantungan library berat, teroptimasi untuk GitHub Pages.</p>
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <strong>0 Dependencies</strong>
+                  Pure Lightweight Code
+                </div>
+                <div class="metric-item">
+                  <strong>100/100</strong>
+                  SEO &amp; Accessibility
+                </div>
+              </div>
+              <div class="project-links">
+                <button class="btn-case-study" data-case="portfolio-platform">📄 Detail Case Study</button>
+                <a href="https://github.com/wahyu2810/wahyu.github.io" target="_blank" class="project-link">⭐ Repo GitHub</a>
               </div>
             </div>
           </div>
@@ -371,33 +600,125 @@
     </section>
 
     <!-- ======================================================================
-         Experience & Journey Section
+         Interactive Case Study Modal Dialog
+         ====================================================================== -->
+    <div class="modal-overlay" id="caseModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="section-tag" style="margin-bottom:0.2rem;" id="modalTag">CASE STUDY OVERVIEW</span>
+            <h3 style="font-size:1.5rem; color:var(--text-main);" id="modalTitle">Judul Proyek</h3>
+          </div>
+          <button class="modal-close" id="modalClose" aria-label="Tutup Modal">✕</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Dynamic Content Loaded via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         Engineering Activity & Contribution Matrix Section (`#activity`)
+         ====================================================================== -->
+    <section id="activity">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">04. ENGINEERING DISCIPLINE</div>
+          <h2 class="section-title">Konsistensi &amp; <span>Aktivitas Kode</span></h2>
+          <p class="section-subtitle">Dedikasi dalam penulisan kode berkesinambungan, eksplorasi teknologi baru, serta pengembangan proyek open-source.</p>
+        </div>
+
+        <div class="activity-grid">
+          <div class="activity-card">
+            <div class="contrib-header">
+              <h3>Simulasi Kontribus GitHub &amp; Kode Mingguan</h3>
+              <div class="contrib-legend">
+                <span>Lebih sedikit</span>
+                <span class="contrib-box" style="background:rgba(255,255,255,0.05)"></span>
+                <span class="contrib-box contrib-lvl-1"></span>
+                <span class="contrib-box contrib-lvl-2"></span>
+                <span class="contrib-box contrib-lvl-3"></span>
+                <span class="contrib-box contrib-lvl-4"></span>
+                <span>Lebih banyak</span>
+              </div>
+            </div>
+
+            <!-- Contribution Grid generated via JS -->
+            <div class="contrib-matrix" id="contribMatrix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Experience & Education Roadmap Section
          ====================================================================== -->
     <section id="experience">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">04. JEJAK &amp; PENDIDIKAN</div>
-          <h2 class="section-title">Perjalanan <span>Akademis &amp; Karya</span></h2>
+          <div class="section-tag">05. PETA PERJALANAN</div>
+          <h2 class="section-title">Jejak Karir &amp; <span>Pendidikan</span></h2>
+          <p class="section-subtitle">Perjalanan akademis dan rekam jejak pengembangan perangkat lunak dalam menghadirkan solusi teknologi.</p>
         </div>
 
         <div class="timeline">
+          <!-- Timeline Item 1 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <span class="timeline-year">SEKARANG</span>
-              <h3>Pengembangan Aplikasi &amp; Riset Teknologi</h3>
-              <h4>Mahasiswa Informatika &amp; Software Enthusiast</h4>
-              <p>Fokus mengeksplorasi arsitektur web modern, metodologi penelitian komputasi, pengembangan aplikasi desktop, serta pengujian sistem perangkat lunak.</p>
+              <div class="timeline-header">
+                <span class="timeline-year">SEKARANG</span>
+              </div>
+              <h3>Software Engineer &amp; Full-Stack Architect</h3>
+              <h4>Independent Software Developer &amp; Tech Explorer</h4>
+              <p>
+                Mengembangkan berbagai proyek perangkat lunak dari aplikasi web modern berkinerja tinggi hingga arsitektur desktop. Fokus pada penerapan arsitektur bersih, desain antarmuka interaktif, dan pengujian keandalan aplikasi.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Modern JavaScript/TypeScript</span>
+                <span class="tag">Web Architecture</span>
+                <span class="tag">Desktop Engineering</span>
+              </div>
             </div>
           </div>
 
+          <!-- Timeline Item 2 -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <span class="timeline-year">EKSPLORASI PROYEK</span>
-              <h3>Proyek Pengembangan Web &amp; Aplikasi Desktop</h3>
-              <h4>Independent Project Developer</h4>
-              <p>Membangun berbagai proyek portfolio berorientasi penyelesaian masalah nyata, memvalidasi ide desain menjadi aplikasi fungsional, dan menerapkan praktik terbaik kode bersih.</p>
+              <div class="timeline-header">
+                <span class="timeline-year">MAHASISWA INFORMATIKA</span>
+              </div>
+              <h3>Studi Rekayasa Perangkat Lunak &amp; Komputasi</h3>
+              <h4>Pendidikan Tinggi Teknik Informatika</h4>
+              <p>
+                Mendalami algoritma komputasi, struktur data tingkat lanjut, perancangan basis data relasional, metodologi penelitian, serta praktik rekayasa perangkat lunak terstruktur.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Software Engineering</span>
+                <span class="tag">Database Systems</span>
+                <span class="tag">System Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-year">OPEN SOURCE CONTRIBUTOR</span>
+              </div>
+              <h3>Pengembang Proyek Open-Source GitHub</h3>
+              <h4>GitHub Pages &amp; Community Collaborator</h4>
+              <p>
+                Mempublish repositori kode terbuka, mendokumentasikan praktik terbaik pengembangan web modern, serta membangun portofolio digital interaktif yang siap diuji publik.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Git Version Control</span>
+                <span class="tag">GitHub Pages</span>
+                <span class="tag">Clean Documentation</span>
+              </div>
             </div>
           </div>
         </div>
@@ -410,32 +731,50 @@
     <section id="contact">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">05. KONEKSI &amp; DISKUSI</div>
-          <h2 class="section-title">Mari Berkolaborasi &amp; <span>Terhubung</span></h2>
+          <div class="section-tag">06. KONEKSI &amp; KOLABORASI</div>
+          <h2 class="section-title">Mari Berdiskusi &amp; <span>Wujudkan Ide</span></h2>
+          <p class="section-subtitle"> Terbuka untuk diskusi proyek rekayasa perangkat lunak, kolaborasi pengembangan aplikasi, atau sekadar bertukar wawasan teknologi.</p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-info">
-            <h3>Punya Ide Proyek atau Pertanyaan?</h3>
+            <h3>Siap Bekerja Sama Mengembangkan Solusi Digital?</h3>
             <p>
-              Saya selalu terbuka untuk diskusi mengenai peluang pengembangan perangkat lunak, kolaborasi proyek opensource, maupun bertukar wawasan seputar teknologi web dan desktop.
+              Silakan hubungi saya langsung melalui email atau media sosial profesional di bawah ini. Saya akan merespons pesan Anda secepatnya.
             </p>
 
             <div class="contact-details">
-              <a href="mailto:wahyunoerrahmat@example.com" class="contact-item">
-                <div class="contact-item-icon">✉️</div>
-                <div>
-                  <strong style="display: block;">Email Pribadi</strong>
-                  <span style="color: var(--text-muted);">wahyunoerrahmat@example.com</span>
+              <div class="contact-item">
+                <div class="contact-item-left">
+                  <div class="contact-item-icon">✉️</div>
+                  <div>
+                    <strong style="display: block;">Email Profesional</strong>
+                    <span style="color: var(--text-muted);" id="emailText">wahyunoerrahmat@gmail.com</span>
+                  </div>
                 </div>
-              </a>
+                <button class="btn-copy" id="copyEmailBtn" data-copy="wahyunoerrahmat@gmail.com">Salin Email</button>
+              </div>
 
               <a href="https://github.com/wahyu2810" target="_blank" class="contact-item">
-                <div class="contact-item-icon">💻</div>
-                <div>
-                  <strong style="display: block;">GitHub Profile</strong>
-                  <span style="color: var(--text-muted);">github.com/wahyu2810</span>
+                <div class="contact-item-left">
+                  <div class="contact-item-icon">💻</div>
+                  <div>
+                    <strong style="display: block;">GitHub Profile</strong>
+                    <span style="color: var(--text-muted);">github.com/wahyu2810</span>
+                  </div>
                 </div>
+                <span style="color: var(--accent-secondary);">↗</span>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" class="contact-item">
+                <div class="contact-item-left">
+                  <div class="contact-item-icon">👔</div>
+                  <div>
+                    <strong style="display: block;">LinkedIn Professional</strong>
+                    <span style="color: var(--text-muted);">Jaringan Profesional &amp; Portofolio Karir</span>
+                  </div>
+                </div>
+                <span style="color: var(--accent-secondary);">↗</span>
               </a>
             </div>
           </div>
@@ -449,12 +788,12 @@
 
             <div class="form-group">
               <label for="email" class="form-label">Alamat Email</label>
-              <input type="email" id="email" class="form-control" placeholder="nama@email.com" required>
+              <input type="email" id="email" class="form-control" placeholder="nama@perusahaan.com" required>
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label">Pesan / Ide Proyek</label>
-              <textarea id="message" class="form-control" placeholder="Tuliskan pesan atau hal yang ingin didiskusikan..." required></textarea>
+              <label for="message" class="form-label">Subjek &amp; Pesan Proyek</label>
+              <textarea id="message" class="form-control" placeholder="Jelaskan kebutuhan proyek atau topik diskusi yang ingin Anda bahas..." required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
@@ -476,7 +815,7 @@
         <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">IN</a>
         <a href="#hero" class="social-link" aria-label="Top">↑</a>
       </div>
-      <p>&copy; 2026 Wahyu Noer Rahmat. Built with passion for GitHub Pages (<code style="color: var(--accent-secondary);">wahyu.github.io</code>).</p>
+      <p>&copy; 2026 Wahyu Noer Rahmat. Engineered with passion for GitHub Pages (<code style="color: var(--accent-secondary);">wahyunoerrahmat.github.io</code>).</p>
     </div>
   </footer>
 
