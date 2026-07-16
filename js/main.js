@@ -1,26 +1,23 @@
 /**
- * Main JavaScript Controller — Wahyu Noer Rahmat Professional Portfolio
- * Handles Theme Customizer, Terminal Sandbox, Case Study Modal, Contribution Matrix,
- * Counter Animations, Skill Category Filters, Project Filters, and Interactive Forms.
+ * Main JavaScript Controller — Wahyu Noer Rahmat Executive & Minimalist Portfolio
+ * Handles Navigation, Code Preview Window, Project Category Filters,
+ * Step-by-Step Tutorial Wizard Modal, Live GitHub Repository Sync, and Interactive Elements.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  initThemeSwitcher();
   initTypewriter();
-  initHeroTerminal();
+  initCodeWindowTabs();
   initStatsCounters();
-  initSkillTabs();
   initProjectFilters();
-  initCaseStudyModal();
+  initTutorialModal();
   initLiveGitHubRepositories();
-  initContributionMatrix();
   initCopyEmail();
   initContactForm();
 });
 
 /**
- * 1. Navbar scroll behavior & mobile toggle
+ * 1. Navbar Scroll Effect & Mobile Toggle
  */
 function initNavbar() {
   const navbar = document.getElementById('navbar');
@@ -28,10 +25,12 @@ function initNavbar() {
   const navLinks = document.getElementById('navLinks');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
+    if (window.scrollY > 30) {
+      navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.6)';
+      navbar.style.background = 'rgba(9, 10, 15, 0.94)';
     } else {
-      navbar.classList.remove('scrolled');
+      navbar.style.boxShadow = 'none';
+      navbar.style.background = 'rgba(9, 10, 15, 0.82)';
     }
   });
 
@@ -51,40 +50,7 @@ function initNavbar() {
 }
 
 /**
- * 2. Interactive Theme Switcher
- */
-function initThemeSwitcher() {
-  const themeBtns = document.querySelectorAll('.theme-btn');
-  const body = document.body;
-
-  // Load saved theme
-  const savedTheme = localStorage.getItem('wahyu_portfolio_theme') || 'default';
-  body.setAttribute('data-theme', savedTheme);
-  updateActiveThemeBtn(savedTheme);
-
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const selectedTheme = btn.getAttribute('data-theme-val');
-      body.setAttribute('data-theme', selectedTheme);
-      localStorage.setItem('wahyu_portfolio_theme', selectedTheme);
-      updateActiveThemeBtn(selectedTheme);
-      showToast(`Tema warna diubah ke mode: ${selectedTheme.toUpperCase()}`);
-    });
-  });
-
-  function updateActiveThemeBtn(theme) {
-    themeBtns.forEach(btn => {
-      if (btn.getAttribute('data-theme-val') === theme) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  }
-}
-
-/**
- * 3. Dynamic Typewriter Effect
+ * 2. Typewriter Effect
  */
 function initTypewriter() {
   const element = document.getElementById('typewriter');
@@ -93,8 +59,9 @@ function initTypewriter() {
   const roles = [
     'Software Engineer',
     'Full-Stack Web Architect',
-    'Desktop Systems Developer',
-    'Modern UI/UX Engineer'
+    'AI & Rule-Based Systems Developer',
+    'Desktop GUI Engineer',
+    'Open Source Contributor'
   ];
 
   let roleIndex = 0;
@@ -108,20 +75,20 @@ function initTypewriter() {
     if (isDeleting) {
       element.textContent = currentRole.substring(0, charIndex - 1);
       charIndex--;
-      delay = 45;
+      delay = 40;
     } else {
       element.textContent = currentRole.substring(0, charIndex + 1);
       charIndex++;
-      delay = 95;
+      delay = 85;
     }
 
     if (!isDeleting && charIndex === currentRole.length) {
-      delay = 2200;
+      delay = 2400;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
-      delay = 500;
+      delay = 450;
     }
 
     setTimeout(type, delay);
@@ -131,11 +98,11 @@ function initTypewriter() {
 }
 
 /**
- * 4. Interactive Hero Terminal (Multi-tab & Command Runner)
+ * 3. Hero Code Preview Window Tab Switcher
  */
-function initHeroTerminal() {
-  const tabBtns = document.querySelectorAll('.terminal-tabs .tab-btn');
-  const tabPanes = document.querySelectorAll('.tab-pane');
+function initCodeWindowTabs() {
+  const tabBtns = document.querySelectorAll('.window-tabs .code-tab');
+  const tabPanes = document.querySelectorAll('.code-window-body');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -149,82 +116,10 @@ function initHeroTerminal() {
       if (targetPane) targetPane.classList.add('active');
     });
   });
-
-  // Simulated CLI Sandbox in tab-terminal
-  const termInput = document.getElementById('termInput');
-  const termOutput = document.getElementById('termOutput');
-  const quickBtns = document.querySelectorAll('.term-chip');
-
-  function runCommand(cmd) {
-    const command = cmd.trim().toLowerCase();
-    let response = '';
-
-    switch (command) {
-      case 'help':
-        response = `
-          <strong>Daftar Perintah Tersedia:</strong><br>
-          • <span style="color:#34d399">skills</span> : Tampilkan daftar keahlian utama Wahyu<br>
-          • <span style="color:#34d399">projects</span> : Tampilkan ringkasan proyek unggulan<br>
-          • <span style="color:#34d399">contact</span> : Info email dan koneksi profesional<br>
-          • <span style="color:#34d399">clear</span> : Bersihkan layar terminal
-        `;
-        break;
-      case 'skills':
-        response = `
-          <strong>Keahlian Utama:</strong><br>
-          Frontend: HTML5, Modern CSS, JavaScript ES6+, TypeScript<br>
-          Backend: Node.js, REST API, Database SQL<br>
-          Desktop: Systems GUI Engineering, C++, Java
-        `;
-        break;
-      case 'projects':
-        response = `
-          <strong>Proyek &amp; Studi Kasus Unggulan:</strong><br>
-          [#01] Enterprise AI Analytics Dashboard (Web App)<br>
-          [#02] Desktop Resource Management System (Desktop)<br>
-          [#03] Cyber-Glass Design System &amp; UI Tokens (Architecture)
-        `;
-        break;
-      case 'contact':
-        response = `
-          <strong>Koneksi Langsung:</strong><br>
-          Email: wahyunoerrahmat@gmail.com<br>
-          GitHub: https://github.com/wahyu2810
-        `;
-        break;
-      case 'clear':
-        termOutput.innerHTML = `Layar terminal dibersihkan. Ketik <strong>help</strong> untuk memulai.`;
-        return;
-      default:
-        response = `Perintah '<span style="color:#f43f5e">${cmd}</span>' tidak dikenali. Ketik <strong>help</strong> untuk melihat perintah.`;
-    }
-
-    termOutput.innerHTML = `<div style="margin-bottom:6px; color:#a855f7;">wahyu@portfolio:~$ ${cmd}</div>${response}`;
-    termOutput.scrollTop = termOutput.scrollHeight;
-  }
-
-  if (termInput) {
-    termInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        if (termInput.value.trim() !== '') {
-          runCommand(termInput.value);
-          termInput.value = '';
-        }
-      }
-    });
-  }
-
-  quickBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cmd = btn.getAttribute('data-cmd');
-      if (termInput) termInput.value = '';
-      runCommand(cmd);
-    });
-  });
 }
 
 /**
- * 5. Stats Counter Animation on Scroll
+ * 4. Stats Counter Animations
  */
 function initStatsCounters() {
   const counters = document.querySelectorAll('.counter');
@@ -237,13 +132,13 @@ function initStatsCounters() {
         counters.forEach(counter => {
           const target = +counter.getAttribute('data-target');
           let count = 0;
-          const increment = Math.ceil(target / 40);
+          const increment = Math.max(1, Math.ceil(target / 35));
 
           const updateCounter = () => {
             count += increment;
             if (count < target) {
               counter.innerText = count;
-              setTimeout(updateCounter, 35);
+              setTimeout(updateCounter, 40);
             } else {
               counter.innerText = target;
             }
@@ -256,66 +151,16 @@ function initStatsCounters() {
     });
   }, { threshold: 0.3 });
 
-  const banner = document.querySelector('.stats-banner');
-  if (banner) observer.observe(banner);
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) observer.observe(statsBar);
 }
 
 /**
- * 6. Skill Matrix Category Tabs & Progress Bar Observer
- */
-function initSkillTabs() {
-  const skillBtns = document.querySelectorAll('.skill-tab-btn');
-  const skillCards = document.querySelectorAll('#skillsGrid .skill-card');
-
-  skillBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      skillBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cat = btn.getAttribute('data-skill-tab');
-
-      skillCards.forEach(card => {
-        const cardCat = card.getAttribute('data-skill-cat');
-        if (cat === 'all' || cardCat === cat) {
-          card.style.display = 'flex';
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 30);
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // Progress Bar Animation Observer
-  const progressBars = document.querySelectorAll('.skill-progress-bar');
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const targetWidth = bar.getAttribute('data-width');
-        if (targetWidth) bar.style.width = targetWidth;
-        obs.unobserve(bar);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  progressBars.forEach(bar => {
-    bar.style.width = '0%';
-    observer.observe(bar);
-  });
-}
-
-/**
- * 7. Project Category Filters
+ * 5. Project Category Filters
  */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-tabs .filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('#githubReposGrid .project-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -329,11 +174,11 @@ function initProjectFilters() {
         if (filterValue === 'all' || category === filterValue) {
           card.style.display = 'flex';
           card.style.opacity = '0';
-          card.style.transform = 'translateY(18px)';
+          card.style.transform = 'translateY(12px)';
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-          }, 40);
+          }, 30);
         } else {
           card.style.display = 'none';
         }
@@ -343,9 +188,9 @@ function initProjectFilters() {
 }
 
 /**
- * 8. Interactive Tutorial & Case Study Modal Dialog (With Step-by-Step Guides)
+ * 6. Step-by-Step Tutorial Wizard inside Modal (`#caseModal`)
  */
-function initCaseStudyModal() {
+function initTutorialModal() {
   const modal = document.getElementById('caseModal');
   const modalTag = document.getElementById('modalTag');
   const modalTitle = document.getElementById('modalTitle');
@@ -356,18 +201,18 @@ function initCaseStudyModal() {
 
   const tutorialsData = {
     'sistem-pakar': {
-      tag: 'PUBLIC REPO TUTORIAL • PYTHON ARTIFICIAL INTELLIGENCE',
+      tag: 'TUTORIAL CARA MEMBUAT • PYTHON AI EXPERT SYSTEM',
       title: 'Sistem Pakar Diagnosis Gizi Buruk Balita (Forward Chaining)',
       repoUrl: 'https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON',
       steps: [
         {
-          label: 'Langkah 1: Persiapan & Instalasi',
+          label: '1. Persiapan & Kloning',
           html: `
             <div class="modal-section">
               <h4>01. Kloning Repositori &amp; Lingkungan Python</h4>
-              <p>Langkah awal adalah mengkloning repositori dari GitHub dan menyiapkan virtual environment Python agar dependensi terisolasi dengan rapi.</p>
+              <p>Langkah awal adalah mengunduh kode sumber dari repositori GitHub resmi Wahyu Noer Rahmat dan menyiapkan lingkungan Python 3 pada komputer Anda.</p>
               <div class="tutorial-code-box">
-                <div class="tutorial-code-header"><span>Terminal / PowerShell</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON.git&#10;cd SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON">Salin Perintah</button></div>
+                <div class="tutorial-code-header"><span>Terminal / Command Prompt</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON.git&#10;cd SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON.git<br>
                 cd SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON
               </div>
@@ -375,21 +220,21 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Arsitektur & Aturan AI',
+          label: '2. Arsitektur Rule-Based',
           html: `
             <div class="modal-section">
-              <h4>02. Representasi Knowledge Base (Forward Chaining)</h4>
-              <p>Sistem pakar menggunakan metode inferensi Forward Chaining di mana aturan (IF gejala THEN diagnosis) dievaluasi maju dari premis fakta ke kesimpulan medik.</p>
-              <div class="tutorial-tip">💡 <strong>Tips Arsitektur:</strong> Pisahkan berkas aturan pengetahuan (Knowledge Base) dengan mesin penalaran (Inference Engine) agar mudah ditambah gejala baru.</div>
+              <h4>02. Logika Inferensi Forward Chaining</h4>
+              <p>Sistem ini menerapkan metode inferensi <strong>Forward Chaining</strong>, di mana pemeriksaan dimulai dari fakta gejala awal (seperti berat badan, edema klinis, nafsu makan berkurang) yang kemudian dirangkai melewati aturan pengetahuan medis untuk menyimpulkan kesimpulan diagnosis akhir.</p>
+              <div class="tutorial-tip">💡 <strong>Catatan Arsitektur:</strong> Aturan basis pengetahuan medis dipisahkan secara modular agar mudah diperbarui apabila ada penambahan parameter gizi baru dari tenaga medis tanpa merombak mesin penalaran utama.</div>
             </div>
           `
         },
         {
-          label: 'Langkah 3: Menjalankan Sistem',
+          label: '3. Eksekusi Program',
           html: `
             <div class="modal-section">
-              <h4>03. Eksekusi Program Diagnosis Python</h4>
-              <p>Jalankan berkas utama sistem pakar menggunakan interpreter Python 3 melalui terminal atau IDE pilihan Anda.</p>
+              <h4>03. Menjalankan Aplikasi Diagnosis</h4>
+              <p>Jalankan berkas utama aplikasi menggunakan interpreter Python melalui terminal Anda. Program CLI akan langsung meminta masukan data gejala dari pengguna.</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="python main.py">Salin Perintah</button></div>
                 python main.py
@@ -398,27 +243,27 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 4: Pengujian & Validasi',
+          label: '4. Uji Diagnosis & Hasil',
           html: `
             <div class="modal-section">
-              <h4>04. Simulasi Input Gejala Balita</h4>
-              <p>Sistem akan memberikan daftar pertanyaan gejala klinis (misal: berat badan di bawah standar, edema, lesu). Masukkan respons Y/T untuk mendapatkan hasil diagnosis otomatis.</p>
+              <h4>04. Simulasi Input &amp; Evaluasi Medis</h4>
+              <p>Setelah program berjalan, jawab serangkaian pertanyaan gejala klinis balita dengan ketik <strong>Y (Ya)</strong> atau <strong>T (Tidak)</strong>. Mesin inferensi akan menampilkan ringkasan diagnosis serta anjuran tindakan penanganan gizi secara akurat.</p>
             </div>
           `
         }
       ]
     },
     'k-means': {
-      tag: 'PUBLIC REPO TUTORIAL • MACHINE LEARNING DATA SCIENCE',
+      tag: 'TUTORIAL CARA MEMBUAT • MACHINE LEARNING & DATA SCIENCE',
       title: 'Klasterisasi Literasi Jawa Barat (K-Means Clustering)',
       repoUrl: 'https://github.com/wahyunoerrahmat/K-Means_Literasi_Jawa_Barat',
       steps: [
         {
-          label: 'Langkah 1: Persiapan Dataset & Pustaka',
+          label: '1. Persiapan Pustaka',
           html: `
             <div class="modal-section">
-              <h4>01. Instalasi Pustaka Data Science Python</h4>
-              <p>Kloning repositori dan instal library ilmiah seperti Pandas, NumPy, Scikit-Learn, serta Matplotlib untuk pemrosesan data dan visualisasi.</p>
+              <h4>01. Kloning Repositori &amp; Instalasi Dependensi</h4>
+              <p>Siapkan lingkungan Python dengan pustaka pengolahan data ilmiah seperti Pandas, NumPy, Scikit-Learn, dan Matplotlib.</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/K-Means_Literasi_Jawa_Barat.git&#10;pip install pandas numpy scikit-learn matplotlib seaborn">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/K-Means_Literasi_Jawa_Barat.git<br>
@@ -428,49 +273,49 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Algoritma K-Means & Elbow Method',
+          label: '2. Elbow Method Optimization',
           html: `
             <div class="modal-section">
-              <h4>02. Penentuan Jumlah Klaster Optimal (Elbow Method)</h4>
-              <p>Sebelum melakukan klasterisasi K-Means, gunakan metode Elbow untuk menghitung nilai Within-Cluster Sum of Squares (WCSS) guna menentukan nilai K terbaik.</p>
+              <h4>02. Menentukan K Optimal dengan Elbow Method</h4>
+              <p>Sebelum melakukan klasterisasi, algoritma menghitung nilai Within-Cluster Sum of Squares (WCSS) pada berbagai titik K untuk menemukan patahan siku (elbow) terbaik agar pembagian kelompok daerah benar-benar representatif.</p>
             </div>
           `
         },
         {
-          label: 'Langkah 3: Pemrosesan & Visualisasi',
+          label: '3. Pemrosesan K-Means',
           html: `
             <div class="modal-section">
-              <h4>03. Menjalankan Notebook / Skrip Klasterisasi</h4>
-              <p>Eksekusi skrip analisis untuk menghasilkan pengelompokan daerah Jawa Barat berdasarkan indeks literasi tinggi, menengah, dan rendah.</p>
+              <h4>03. Eksekusi Skrip Klasterisasi</h4>
+              <p>Jalankan skrip Python untuk mengelompokkan kabupaten/kota di Jawa Barat berdasarkan indeks literasi (tinggi, sedang, rendah).</p>
               <div class="tutorial-code-box">
-                <div class="tutorial-code-header"><span>Terminal Execution</span><button class="btn-copy-code" data-copy="python k_means_literasi.py">Salin Perintah</button></div>
+                <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="python k_means_literasi.py">Salin Perintah</button></div>
                 python k_means_literasi.py
               </div>
             </div>
           `
         },
         {
-          label: 'Langkah 4: Analisis Hasil Klaster',
+          label: '4. Interpretasi Peta Klaster',
           html: `
             <div class="modal-section">
-              <h4>04. Interpretasi Peta Klaster Literasi</h4>
-              <p>Periksa keluaran grafik scatter plot serta tabel klasifikasi kabupaten/kota untuk merumuskan rekomendasi kebijakan peningkatan literasi.</p>
+              <h4>04. Analisis Grafik Visualisasi</h4>
+              <p>Periksa diagram scatter plot hasil yang diekspor untuk merumuskan rekomendasi intervensi pendidikan pada klaster daerah yang membutuhkan prioritas peningkatan literasi.</p>
             </div>
           `
         }
       ]
     },
     'absensi-magang': {
-      tag: 'PUBLIC REPO TUTORIAL • FULL-STACK WEB APPLICATION',
+      tag: 'TUTORIAL CARA MEMBUAT • FULL-STACK WEB APPLICATION',
       title: 'Sistem Manajemen Absensi Magang & Karyawan Terintegrasi',
       repoUrl: 'https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi',
       steps: [
         {
-          label: 'Langkah 1: Kloning & Instalasi',
+          label: '1. Setup Web Server',
           html: `
             <div class="modal-section">
-              <h4>01. Persiapan Web Server &amp; Repositori</h4>
-              <p>Unduh repositori sistem absensi dan letakkan di lingkungan web server (XAMPP / PHP / Node.js sesuai konfigurasi proyek).</p>
+              <h4>01. Kloning &amp; Persiapan Direktori Web Server</h4>
+              <p>Unduh berkas proyek ke direktori server web Anda (seperti htdocs pada XAMPP/Laragon atau direktori proyek Node.js).</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi.git">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi.git
@@ -479,45 +324,45 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Konfigurasi Basis Data SQL',
+          label: '2. Impor Database SQL',
           html: `
             <div class="modal-section">
-              <h4>02. Impor Skema Database</h4>
-              <p>Buat database baru pada server SQL Anda dan impor berkas skema SQL (tabel users, attendance_logs, dan roles) yang tersedia di dalam folder repositori.</p>
+              <h4>02. Konfigurasi Skema Basis Data</h4>
+              <p>Buat database baru pada server MySQL lokal Anda dan impor berkas skema SQL (termasuk tabel pengguna, riwayat kehadiran, dan kredensial akses) yang tersedia di dalam folder repositori.</p>
             </div>
           `
         },
         {
-          label: 'Langkah 3: Konfigurasi Lingkungan (.env)',
+          label: '3. Konfigurasi Koneksi',
           html: `
             <div class="modal-section">
-              <h4>03. Pengaturan Koneksi Database</h4>
-              <p>Sesuaikan parameter host, username, password, dan nama basis data pada berkas konfigurasi sistem.</p>
+              <h4>03. Parameter Lingkungan Kerja (.env / config)</h4>
+              <p>Sesuaikan nama database, pengguna server, dan kata sandi pada berkas konfigurasi sistem agar terhubung dengan lancar.</p>
             </div>
           `
         },
         {
-          label: 'Langkah 4: Uji Coba Presensi Real-Time',
+          label: '4. Pengujian Real-Time',
           html: `
             <div class="modal-section">
-              <h4>04. Login &amp; Simulasi Absensi</h4>
-              <p>Buka browser pada alamat lokal dan coba lakukan pencatatan kehadiran masuk serta keluar untuk memverifikasi log waktu tercatat akurat.</p>
+              <h4>04. Simulasi Presensi Masuk &amp; Keluar</h4>
+              <p>Buka browser pada alamat lokal, masuk menggunakan akun peserta atau pengawas, dan lakukan verifikasi pencatatan jam kehadiran secara real-time.</p>
             </div>
           `
         }
       ]
     },
     'bawaslu-bogor': {
-      tag: 'PUBLIC REPO TUTORIAL • GOVERNMENT CMS PORTAL',
+      tag: 'TUTORIAL CARA MEMBUAT • GOVERNMENT CMS PORTAL',
       title: 'Sistem Portal Informasi Bawaslu Kab. Bogor',
       repoUrl: 'https://github.com/wahyunoerrahmat/BawasluKabBogor',
       steps: [
         {
-          label: 'Langkah 1: Persiapan Lingkungan Portal',
+          label: '1. Kloning Repositori',
           html: `
             <div class="modal-section">
-              <h4>01. Kloning Repositori Portal Bawaslu</h4>
-              <p>Kloning repositori untuk meninjau struktur antarmuka portal publik dan modul administrasi dokumen.</p>
+              <h4>01. Akses Kode Sumber Portal Bawaslu</h4>
+              <p>Unduh repositori untuk meninjau struktur arsitektur antarmuka portal publik dan panel administrasi berita.</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/BawasluKabBogor.git">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/BawasluKabBogor.git
@@ -526,38 +371,38 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Struktur Arsitektur Halaman Publik',
+          label: '2. Pemisahan Modul Publik vs Admin',
           html: `
             <div class="modal-section">
-              <h4>02. Pemisahan Modul Publik &amp; Panel Admin</h4>
-              <p>Sistem ini memisahkan secara tegas antarmuka berita/regulasi untuk publik dengan panel kontrol otentikasi untuk petugas pengawas pemilu.</p>
+              <h4>02. Arsitektur Multi-Layer Portal</h4>
+              <p>Sistem dipisahkan secara tegas antara halaman publik (untuk akses berita dan unduh regulasi hukum) dengan panel admin terautentikasi (untuk petugas Bawaslu memperbarui konten publikasi).</p>
             </div>
           `
         },
         {
-          label: 'Langkah 3: Pengujian Aksesibilitas & Responsivitas',
+          label: '3. Uji Coba Responsivitas',
           html: `
             <div class="modal-section">
-              <h4>03. Pengujian Tampilan Multi-Perangkat</h4>
-              <p>Pastikan tata letak berita dan dokumen hukum dapat dibaca dengan jelas di perangkat seluler maupun layar lebar.</p>
+              <h4>03. Pengujian Tampilan Mobile-First</h4>
+              <p>Periksa tata letak halaman pada berbagai ukuran layar untuk memastikan transparansi informasi publik tetap terbaca sempurna di perangkat seluler.</p>
             </div>
           `
         }
       ]
     },
     'devops-practice': {
-      tag: 'PUBLIC REPO TUTORIAL • DEVOPS ENGINEERING ROADMAP',
-      title: 'DevOps Engineering Roadmap & CI/CD Pipeline Practice',
+      tag: 'TUTORIAL CARA MEMBUAT • DEVOPS & CI/CD PIPELINE',
+      title: 'DevOps Engineering Roadmap & CI/CD Practice',
       repoUrl: 'https://github.com/wahyunoerrahmat/LearnDevOpsEgineer',
       steps: [
         {
-          label: 'Langkah 1: Kontainerisasi dengan Docker',
+          label: '1. Docker Container Build',
           html: `
             <div class="modal-section">
-              <h4>01. Build Docker Container Image</h4>
-              <p>Pelajari praktik penulisan Dockerfile efisien dan build image aplikasi Anda agar konsisten di semua lingkungan deployment.</p>
+              <h4>01. Kontainerisasi dengan Docker</h4>
+              <p>Pelajari penulisan <code>Dockerfile</code> berkinerja tinggi untuk mengemas aplikasi dan dependensinya menjadi image yang konsisten di semua server.</p>
               <div class="tutorial-code-box">
-                <div class="tutorial-code-header"><span>Docker Terminal</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/LearnDevOpsEgineer.git&#10;docker build -t wahyu-devops-app .">Salin Perintah</button></div>
+                <div class="tutorial-code-header"><span>Terminal Docker</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/LearnDevOpsEgineer.git&#10;docker build -t wahyu-devops-app .">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/LearnDevOpsEgineer.git<br>
                 docker build -t wahyu-devops-app .
               </div>
@@ -565,36 +410,36 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Konfigurasi CI/CD Pipeline',
+          label: '2. Automated CI/CD Workflows',
           html: `
             <div class="modal-section">
-              <h4>02. Otomatisasi GitHub Actions Workflows</h4>
-              <p>Konfigurasikan berkas pipeline YAML di dalam folder <code>.github/workflows/</code> untuk menjalankan automated test setiap kali terjadi push atau pull request.</p>
+              <h4>02. Konfigurasi GitHub Actions Pipeline</h4>
+              <p>Tinjau berkas konfigurasi YAML pada direktori <code>.github/workflows/</code> yang otomatis memicu pengujian (testing) dan pemeriksaan kualitas setiap kali ada perubahan kode.</p>
             </div>
           `
         },
         {
-          label: 'Langkah 3: Pemantauan & Deployment',
+          label: '3. Verifikasi Pipeline',
           html: `
             <div class="modal-section">
-              <h4>03. Verifikasi Pipeline Execution</h4>
-              <p>Periksa tab Actions pada GitHub untuk memastikan seluruh alur build dan pengujian lulus tanpa kesalahan.</p>
+              <h4>03. Audit Eksekusi Workflows</h4>
+              <p>Periksa log eksekusi pada tab Actions di GitHub untuk memvalidasi seluruh tahapan build dan deployment berjalan sukses tanpa gangguan.</p>
             </div>
           `
         }
       ]
     },
     'steganografi': {
-      tag: 'PUBLIC REPO TUTORIAL • IMAGE PROCESSING & CRYPTOGRAPHY',
+      tag: 'TUTORIAL CARA MEMBUAT • IMAGE PROCESSING & CRYPTOGRAPHY',
       title: 'Pengolahan Citra Digital & Steganografi LSB Python',
       repoUrl: 'https://github.com/wahyunoerrahmat/metode-manipulasi-citra-digital-steganografi',
       steps: [
         {
-          label: 'Langkah 1: Instalasi Library Citra (Pillow/OpenCV)',
+          label: '1. Instalasi Pustaka',
           html: `
             <div class="modal-section">
-              <h4>01. Persiapan Pustaka Pengolahan Gambar</h4>
-              <p>Siapkan lingkungan Python dengan pustaka manipulasi citra digital seperti PIL/Pillow atau NumPy.</p>
+              <h4>01. Persiapan Pustaka Pillow / OpenCV</h4>
+              <p>Siapkan lingkungan Python dengan pustaka pemrosesan matriks gambar digital.</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/metode-manipulasi-citra-digital-steganografi.git&#10;pip install pillow numpy">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/metode-manipulasi-citra-digital-steganografi.git<br>
@@ -604,36 +449,36 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Konsep Bit LSB (Least Significant Bit)',
+          label: '2. Algoritma Bit LSB',
           html: `
             <div class="modal-section">
-              <h4>02. Algoritma Penyembunyian Pesan LSB</h4>
-              <p>Pesan rahasia dikonversi menjadi string biner dan disisipkan pada bit paling tidak signifikan (LSB) dari saluran warna RGB gambar penampung.</p>
+              <h4>02. Mekanisme Least Significant Bit (LSB)</h4>
+              <p>Pesan rahasia dikonversi menjadi urutan bit biner, lalu disisipkan secara halus pada bit terakhir (paling tidak signifikan) dari setiap piksel RGB gambar penampung sehingga mata manusia tidak menyadari perubahan visual.</p>
             </div>
           `
         },
         {
-          label: 'Langkah 3: Encode & Decode Rahasia',
+          label: '3. Encode & Decode',
           html: `
             <div class="modal-section">
-              <h4>03. Uji Coba Penyandian Pesan ke Gambar</h4>
-              <p>Jalankan perintah encode untuk menyisipkan teks rahasia ke dalam berkas gambar PNG, lalu jalankan decode untuk mengekstrak kembali pesan tersebut.</p>
+              <h4>03. Pengujian Sisip dan Ekstraksi Pesan</h4>
+              <p>Jalankan perintah encode untuk menyisipkan teks rahasia ke gambar PNG, lalu jalankan perintah decode pada gambar tersebut untuk mengekstrak kembali pesan rahasia secara akurat.</p>
             </div>
           `
         }
       ]
     },
     'desktop-gui': {
-      tag: 'PUBLIC REPO TUTORIAL • DESKTOP GUI ENGINEERING',
+      tag: 'TUTORIAL CARA MEMBUAT • DESKTOP GUI SYSTEMS',
       title: 'Aplikasi Desktop GUI Interaktif & Manajemen Form',
       repoUrl: 'https://github.com/wahyunoerrahmat/tugas1-pemrograman-desktop',
       steps: [
         {
-          label: 'Langkah 1: Persiapan IDE & SDK',
+          label: '1. Setup Proyek Desktop',
           html: `
             <div class="modal-section">
-              <h4>01. Kloning &amp; Setup Proyek Desktop</h4>
-              <p>Buka proyek menggunakan lingkungan pengembangan desktop pilihan (Visual Studio / NetBeans / PySide sesuai bahasa implementasi).</p>
+              <h4>01. Kloning &amp; Buka di IDE Desktop</h4>
+              <p>Unduh proyek dan buka dalam lingkungan pengembangan desktop pilihan (seperti Visual Studio / NetBeans / PySide sesuai bahasa implementasi native).</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/tugas1-pemrograman-desktop.git">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/tugas1-pemrograman-desktop.git
@@ -642,27 +487,27 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Arsitektur Event-Driven GUI',
+          label: '2. Event-Driven GUI Logic',
           html: `
             <div class="modal-section">
-              <h4>02. Penghubungan Event Listener Antarmuka</h4>
-              <p>Pelajari bagaimana setiap aksi tombol dan form input dikaitkan langsung dengan fungsi penanganan data untuk responsivitas seketika.</p>
+              <h4>02. Penghubungan Event Listener &amp; Form Handling</h4>
+              <p>Pelajari bagaimana setiap penekanan tombol, pengisian form, dan aksi antarmuka dikaitkan langsung dengan fungsi logika penghitungan sistem berkinerja cepat tanpa jeda.</p>
             </div>
           `
         }
       ]
     },
     'crud-kampus': {
-      tag: 'PUBLIC REPO TUTORIAL • REST API BACKEND SYSTEM',
+      tag: 'TUTORIAL CARA MEMBUAT • REST API BACKEND SYSTEM',
       title: 'Sistem CRUD & REST API Manajemen Akademik Kampus',
       repoUrl: 'https://github.com/wahyunoerrahmat/CRUD-Kampus-Simple',
       steps: [
         {
-          label: 'Langkah 1: Setup Backend & Database',
+          label: '1. Kloning & Dependensi',
           html: `
             <div class="modal-section">
-              <h4>01. Kloning &amp; Instalasi Dependensi Backend</h4>
-              <p>Unduh proyek dan siapkan koneksi database lokal untuk menguji operasi Create, Read, Update, dan Delete.</p>
+              <h4>01. Persiapan Backend &amp; Koneksi SQL</h4>
+              <p>Unduh proyek backend dan siapkan koneksi database lokal untuk memvalidasi operasi Create, Read, Update, dan Delete.</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/CRUD-Kampus-Simple.git">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/CRUD-Kampus-Simple.git
@@ -671,27 +516,27 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Pengujian Endpoint REST API',
+          label: '2. Uji REST API dengan cURL / Postman',
           html: `
             <div class="modal-section">
-              <h4>02. Uji Operasi API dengan Postman / cURL</h4>
-              <p>Gunakan Postman atau cURL untuk memvalidasi setiap endpoint API mengembalikan respons JSON yang tepat dan terstruktur.</p>
+              <h4>02. Audit Response Endpoint API</h4>
+              <p>Lakukan request ke endpoint HTTP yang disediakan untuk memastikan setiap operasi mengembalikan format JSON yang bersih dengan penanganan status code HTTP 200, 201, 400, atau 404 yang tepat.</p>
             </div>
           `
         }
       ]
     },
     'pawf-mvc': {
-      tag: 'PUBLIC REPO TUTORIAL • WEB FRAMEWORK ARCHITECTURE',
+      tag: 'TUTORIAL CARA MEMBUAT • WEB FRAMEWORK ARCHITECTURE',
       title: 'Arsitektur Web Framework MVC (PAWF)',
       repoUrl: 'https://github.com/wahyunoerrahmat/pawf',
       steps: [
         {
-          label: 'Langkah 1: Struktur Folder MVC',
+          label: '1. Struktur Arsitektur MVC',
           html: `
             <div class="modal-section">
-              <h4>01. Memahami Pemisahan Model-View-Controller</h4>
-              <p>Studi arsitektur framework web yang memisahkan logika query database (Model), presentasi antarmuka (View), dan pengatur alur permintaan (Controller).</p>
+              <h4>01. Memahami Pemisahan Model, View, &amp; Controller</h4>
+              <p>Kloning dan tinjau struktur direktori framework yang memisahkan lapisan akses data (Model), lapisan antarmuka pengguna (View), dan lapisan pengatur alur logika (Controller).</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone https://github.com/wahyunoerrahmat/pawf.git">Salin Perintah</button></div>
                 git clone https://github.com/wahyunoerrahmat/pawf.git
@@ -700,11 +545,11 @@ function initCaseStudyModal() {
           `
         },
         {
-          label: 'Langkah 2: Sistem Routing Dinamis',
+          label: '2. Dynamic Routing Engine',
           html: `
             <div class="modal-section">
-              <h4>02. Alur Eksekusi Router &amp; Middleware</h4>
-              <p>Pelajari bagaimana URL permintaan dipetakan secara bersih ke metode controller yang sesuai.</p>
+              <h4>02. Alur Dispatcher &amp; Middleware Router</h4>
+              <p>Pelajari bagaimana URL request masuk dipetakan oleh router engine menuju kelas controller yang bersesuaian secara efisien.</p>
             </div>
           `
         }
@@ -733,16 +578,18 @@ function initCaseStudyModal() {
 
       if (data.repoUrl) {
         panesHtml += `
-          <div style="margin-top:2rem; padding-top:1.2rem; border-top:1px dashed var(--border-color); display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:0.85rem; color:var(--text-muted);">Lihat seluruh kode sumber langsung di GitHub resmi Wahyu Noer Rahmat:</span>
-            <a href="${data.repoUrl}" target="_blank" class="btn-case-study" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem;">⭐ Buka Repositori GitHub</a>
+          <div class="modal-repo-banner">
+            <span>Pelajari seluruh struktur kode sumber secara langsung di GitHub:</span>
+            <a href="${data.repoUrl}" target="_blank" class="btn-tutorial" style="text-decoration:none; display:inline-flex; width:auto; padding:0.6rem 1.2rem;">
+              <span>⭐ Buka Repositori di GitHub</span>
+              <span style="margin-left:0.4rem;">↗</span>
+            </a>
           </div>
         `;
       }
 
       modalBody.innerHTML = navHtml + panesHtml;
 
-      // Attach step switching logic
       const stepBtns = modalBody.querySelectorAll('.tutorial-step-btn');
       const stepPanes = modalBody.querySelectorAll('.tutorial-step-pane');
 
@@ -758,41 +605,40 @@ function initCaseStudyModal() {
         });
       });
     } else {
-      modalBody.innerHTML = data.content || '<p>Detail tutorial untuk proyek ini tersedia di repositori GitHub.</p>';
+      modalBody.innerHTML = data.content || '<p>Detail panduan untuk proyek ini tersedia langsung di repositori GitHub.</p>';
     }
 
-    // Attach copy code buttons
     modalBody.querySelectorAll('.btn-copy-code').forEach(copyBtn => {
       copyBtn.addEventListener('click', () => {
         const textToCopy = copyBtn.getAttribute('data-copy');
         navigator.clipboard.writeText(textToCopy).then(() => {
           copyBtn.innerText = '✅ Disalin!';
-          copyBtn.style.background = '#10b981';
-          copyBtn.style.borderColor = '#10b981';
+          copyBtn.style.background = '#38bdf8';
+          copyBtn.style.color = '#000';
           setTimeout(() => {
             copyBtn.innerText = 'Salin Perintah';
             copyBtn.style.background = '';
-            copyBtn.style.borderColor = '';
+            copyBtn.style.color = '';
           }, 2000);
         });
       });
     });
   }
 
-  document.querySelectorAll('.btn-case-study').forEach(btn => {
+  document.querySelectorAll('.btn-tutorial').forEach(btn => {
     btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-tutorial') || btn.getAttribute('data-case');
+      const key = btn.getAttribute('data-tutorial');
       const data = tutorialsData[key] || {
         tag: 'TUTORIAL CARA MEMBUAT PROYEK',
-        title: 'Tutorial & Panduan Proyek',
+        title: 'Panduan & Eksplorasi Proyek Open Source',
         repoUrl: 'https://github.com/wahyunoerrahmat',
         steps: [
           {
-            label: 'Langkah 1: Akses Repositori',
+            label: '1. Akses Repositori',
             html: `
               <div class="modal-section">
                 <h4>01. Eksplorasi Kode Sumber di GitHub</h4>
-                <p>Proyek publik ini tersedia langsung pada akun GitHub resmi Wahyu Noer Rahmat (@wahyunoerrahmat). Anda dapat mengkloning atau membaca struktur kodenya secara langsung.</p>
+                <p>Proyek publik ini tersedia langsung pada akun GitHub resmi Wahyu Noer Rahmat (@wahyunoerrahmat). Anda dapat mengunduh atau meninjau struktur kodenya secara langsung.</p>
               </div>
             `
           }
@@ -801,12 +647,14 @@ function initCaseStudyModal() {
 
       renderTutorialWizard(data);
       modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     });
   });
 
   function closeModal() {
     modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
@@ -820,111 +668,7 @@ function initCaseStudyModal() {
 }
 
 /**
- * 9. GitHub Contribution Matrix Simulation
- */
-function initContributionMatrix() {
-  const container = document.getElementById('contribMatrix');
-  if (!container) return;
-
-  const totalCells = 40 * 7; // 40 weeks x 7 days
-  let html = '';
-
-  for (let i = 0; i < totalCells; i++) {
-    // Generate realistic contribution levels
-    const rand = Math.random();
-    let lvlClass = '';
-    let count = 0;
-
-    if (rand > 0.82) {
-      lvlClass = 'contrib-lvl-4';
-      count = Math.floor(Math.random() * 8) + 12;
-    } else if (rand > 0.65) {
-      lvlClass = 'contrib-lvl-3';
-      count = Math.floor(Math.random() * 6) + 6;
-    } else if (rand > 0.45) {
-      lvlClass = 'contrib-lvl-2';
-      count = Math.floor(Math.random() * 4) + 3;
-    } else if (rand > 0.25) {
-      lvlClass = 'contrib-lvl-1';
-      count = Math.floor(Math.random() * 2) + 1;
-    }
-
-    html += `<div class="contrib-cell ${lvlClass}" title="${count} kontribusi kode"></div>`;
-  }
-
-  container.innerHTML = html;
-}
-
-/**
- * 10. Copy Email Action
- */
-function initCopyEmail() {
-  const copyBtn = document.getElementById('copyEmailBtn');
-  if (!copyBtn) return;
-
-  copyBtn.addEventListener('click', () => {
-    const email = copyBtn.getAttribute('data-copy') || 'wahyunoerrahmat@gmail.com';
-    navigator.clipboard.writeText(email).then(() => {
-      showToast('Alamat email berhasil disalin ke papan klip!');
-    }).catch(() => {
-      showToast(`Email: ${email}`);
-    });
-  });
-}
-
-/**
- * 11. Interactive Contact Form Simulator
- */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '⚡ Mengirim Pesan...';
-
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-      form.reset();
-      showToast('Pesan Anda berhasil dikirim! Saya akan segera menghubungi Anda.');
-    }, 1200);
-  });
-}
-
-/**
- * Show Toast Notification
- */
-function showToast(message) {
-  let toast = document.getElementById('toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'toast';
-    toast.className = 'toast-notification';
-    document.body.appendChild(toast);
-  }
-
-  toast.innerHTML = `
-    <span style="font-size: 1.3rem;">✅</span>
-    <div>
-      <strong style="display:block; font-size:0.95rem;">Berhasil!</strong>
-      <span style="font-size:0.85rem;">${message}</span>
-    </div>
-  `;
-
-  toast.classList.add('show');
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 4200);
-}
-
-/**
- * 12. Live GitHub Repositories & Dynamic Step-by-Step Tutorial Generator
+ * 7. Live GitHub Repositories Auto-Sync
  */
 async function initLiveGitHubRepositories() {
   const grid = document.getElementById('githubReposGrid');
@@ -935,9 +679,8 @@ async function initLiveGitHubRepositories() {
     if (!res.ok) return;
     const repos = await res.json();
 
-    // Known static titles/repos already listed
     const existingLinks = new Set();
-    grid.querySelectorAll('a.project-link').forEach(a => {
+    grid.querySelectorAll('a.btn-github-link').forEach(a => {
       existingLinks.add(a.getAttribute('href')?.toLowerCase());
     });
 
@@ -947,48 +690,74 @@ async function initLiveGitHubRepositories() {
 
       const lang = repo.language || 'Code';
       let category = 'web';
+      let catPillClass = 'cat-web';
+      let catLabel = `${lang.toUpperCase()} · OPEN SOURCE REPO`;
+
       const nameLow = repo.name.toLowerCase();
       if (nameLow.includes('ai') || nameLow.includes('kmeans') || nameLow.includes('citra') || nameLow.includes('data')) {
         category = 'ai';
+        catPillClass = 'cat-ai';
+        catLabel = `${lang.toUpperCase()} · AI & DATA SCIENCE`;
       } else if (nameLow.includes('desktop') || nameLow.includes('gui')) {
         category = 'desktop';
-      } else if (nameLow.includes('devops') || nameLow.includes('docker')) {
+        catPillClass = 'cat-desktop';
+        catLabel = `${lang.toUpperCase()} · DESKTOP SYSTEMS`;
+      } else if (nameLow.includes('devops') || nameLow.includes('docker') || nameLow.includes('learn')) {
         category = 'devops';
+        catPillClass = 'cat-devops';
+        catLabel = `${lang.toUpperCase()} · DEVOPS & PIPELINE`;
       }
 
-      const card = document.createElement('div');
+      const card = document.createElement('article');
       card.className = 'project-card';
       card.setAttribute('data-category', category);
       card.innerHTML = `
-        <div class="project-image">
-          <span class="project-badge-top">LIVE GITHUB REPO • ${lang.toUpperCase()}</span>
-          <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="210" fill="#11131c"/>
-            <text x="200" y="110" font-family="'Fira Code', monospace" font-weight="700" font-size="16" fill="#6366f1" text-anchor="middle">${repo.name}</text>
-          </svg>
+        <div class="project-card-header">
+          <div class="header-badges">
+            <span class="cat-pill ${catPillClass}">${catLabel}</span>
+            <span class="status-pill">Live GitHub</span>
+          </div>
+          <h3 class="project-title">${repo.name}</h3>
         </div>
-        <div class="project-body">
+        
+        <div class="project-card-body">
+          <p class="project-summary">
+            ${repo.description || 'Repositori open-source publik resmi yang dikembangkan oleh Wahyu Noer Rahmat dengan teknologi utama <strong>' + lang + '</strong>.'}
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Bahasa Utama</span>
+              <span class="spec-value">${lang}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Aktivitas GitHub</span>
+              <span class="spec-value">${repo.stargazers_count} ⭐ Stars · ${repo.forks_count} 🍴 Forks</span>
+            </div>
+          </div>
+
           <div class="project-tags">
-            <span class="tag">${lang}</span>
-            <span class="tag">Open Source</span>
-            <span class="tag">GitHub Public</span>
+            <span class="tag">#${lang}</span>
+            <span class="tag">#OpenSource</span>
+            <span class="tag">#GitHubPublic</span>
           </div>
-          <h3>${repo.name}</h3>
-          <p>${repo.description || 'Proyek open-source publik resmi Wahyu Noer Rahmat berteknologi ' + lang + '.'}</p>
-          <div class="project-metrics">
-            <div class="metric-item"><strong>${repo.stargazers_count} ⭐</strong>Stars</div>
-            <div class="metric-item"><strong>${repo.forks_count} 🍴</strong>Forks</div>
-          </div>
-          <div class="project-links">
-            <button class="btn-case-study" data-dynamic-repo="${repo.name}">📖 Tutorial Cara Membuat</button>
-            <a href="${repo.html_url}" target="_blank" class="project-link">⭐ Repo GitHub</a>
-          </div>
+        </div>
+
+        <div class="project-card-footer">
+          <button class="btn-tutorial" data-dynamic-repo="${repo.name}">
+            <span class="btn-icon">📖</span>
+            <span>Pelajari &amp; Tutorial Step-by-Step</span>
+          </button>
+          <a href="${repo.html_url}" target="_blank" class="btn-github-link" aria-label="Buka Repositori ${repo.name} di GitHub">
+            <span>⭐ GitHub</span>
+            <span class="arrow">↗</span>
+          </a>
         </div>
       `;
 
       grid.appendChild(card);
 
-      const btn = card.querySelector('.btn-case-study');
+      const btn = card.querySelector('.btn-tutorial');
       btn.addEventListener('click', () => {
         const modal = document.getElementById('caseModal');
         const modalTag = document.getElementById('modalTag');
@@ -1000,14 +769,15 @@ async function initLiveGitHubRepositories() {
 
         modalBody.innerHTML = `
           <div class="tutorial-wizard-tabs">
-            <button class="tutorial-step-btn active" data-step-index="0">Langkah 1: Persiapan &amp; Kloning</button>
-            <button class="tutorial-step-btn" data-step-index="1">Langkah 2: Struktur &amp; Arsitektur</button>
-            <button class="tutorial-step-btn" data-step-index="2">Langkah 3: Menjalankan Proyek</button>
+            <button class="tutorial-step-btn active" data-step-index="0">1. Persiapan &amp; Kloning</button>
+            <button class="tutorial-step-btn" data-step-index="1">2. Struktur Kode ${lang}</button>
+            <button class="tutorial-step-btn" data-step-index="2">3. Eksekusi &amp; Pengujian</button>
           </div>
+          
           <div class="tutorial-step-pane active" id="stepPane_0">
             <div class="modal-section">
               <h4>01. Kloning Repositori GitHub</h4>
-              <p>Unduh berkas proyek langsung dari repositori resmi Wahyu Noer Rahmat di GitHub menggunakan perintah terminal berikut:</p>
+              <p>Unduh kode sumber langsung dari akun GitHub resmi Wahyu Noer Rahmat menggunakan perintah terminal berikut:</p>
               <div class="tutorial-code-box">
                 <div class="tutorial-code-header"><span>Terminal Command</span><button class="btn-copy-code" data-copy="git clone ${repo.html_url}.git&#10;cd ${repo.name}">Salin Perintah</button></div>
                 git clone ${repo.html_url}.git<br>
@@ -1015,21 +785,28 @@ async function initLiveGitHubRepositories() {
               </div>
             </div>
           </div>
+
           <div class="tutorial-step-pane" id="stepPane_1">
             <div class="modal-section">
-              <h4>02. Analisis Struktur Kode (${lang})</h4>
-              <p>Proyek <strong>${repo.name}</strong> dikembangkan dengan bahasa pemrograman utama <strong>${lang}</strong>. Periksa berkas utama di dalam direktori untuk memahami alur penanganan data dan logika aplikasi.</p>
+              <h4>02. Analisis Arsitektur Proyek (${lang})</h4>
+              <p>Proyek <strong>${repo.name}</strong> dikembangkan dengan bahasa pemrograman utama <strong>${lang}</strong>. Tinjau berkas utama di dalam direktori proyek untuk menelusuri alur logika dan abstraksi sistem.</p>
+              <div class="tutorial-tip">💡 <strong>Tips Eksplorasi:</strong> Periksa berkas <code>README.md</code> pada direktori akar repositori untuk melihat catatan instalasi spesifik dari proyek ini.</div>
             </div>
           </div>
+
           <div class="tutorial-step-pane" id="stepPane_2">
             <div class="modal-section">
-              <h4>03. Menjalankan &amp; Pengujian</h4>
-              <p>Ikuti panduan konfigurasi yang tertera pada berkas <code>README.md</code> di repositori untuk menjalankan aplikasi secara lokal.</p>
+              <h4>03. Menjalankan &amp; Verifikasi Sistem</h4>
+              <p>Jalankan aplikasi di lingkungan pengembangan lokal Anda sesuai standar eksekusi bahasa <strong>${lang}</strong>, dan lakukan pengujian fungsionalitas sistem.</p>
             </div>
           </div>
-          <div style="margin-top:2rem; padding-top:1.2rem; border-top:1px dashed var(--border-color); display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:0.85rem; color:var(--text-muted);">Lihat dokumentasi lengkap di GitHub:</span>
-            <a href="${repo.html_url}" target="_blank" class="btn-case-study" style="text-decoration:none;">⭐ Buka Repositori ${repo.name}</a>
+
+          <div class="modal-repo-banner">
+            <span>Pelajari seluruh struktur kode sumber secara langsung di GitHub:</span>
+            <a href="${repo.html_url}" target="_blank" class="btn-tutorial" style="text-decoration:none; display:inline-flex; width:auto; padding:0.6rem 1.2rem;">
+              <span>⭐ Buka Repositori ${repo.name}</span>
+              <span style="margin-left:0.4rem;">↗</span>
+            </a>
           </div>
         `;
 
@@ -1050,19 +827,95 @@ async function initLiveGitHubRepositories() {
           copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(copyBtn.getAttribute('data-copy')).then(() => {
               copyBtn.innerText = '✅ Disalin!';
-              copyBtn.style.background = '#10b981';
-              setTimeout(() => { copyBtn.innerText = 'Salin Perintah'; copyBtn.style.background = ''; }, 2000);
+              copyBtn.style.background = '#38bdf8';
+              copyBtn.style.color = '#000';
+              setTimeout(() => {
+                copyBtn.innerText = 'Salin Perintah';
+                copyBtn.style.background = '';
+                copyBtn.style.color = '';
+              }, 2000);
             });
           });
         });
 
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       });
     });
 
     initProjectFilters();
   } catch (err) {
-    console.warn('GitHub API offline fallback enabled:', err);
+    console.warn('GitHub API offline fallback active:', err);
   }
+}
+
+/**
+ * 8. Copy Email Action
+ */
+function initCopyEmail() {
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (!copyBtn) return;
+
+  copyBtn.addEventListener('click', () => {
+    const email = copyBtn.getAttribute('data-copy') || 'wahyunoerrahmat@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+      showToast('Alamat email berhasil disalin ke papan klip!');
+      copyBtn.innerText = '✅ Disalin!';
+      setTimeout(() => { copyBtn.innerText = 'Salin Email'; }, 2500);
+    }).catch(() => {
+      showToast(`Email: ${email}`);
+    });
+  });
+}
+
+/**
+ * 9. Interactive Contact Form Simulator
+ */
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>⚡ Mengirim Pesan...</span>';
+
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+      form.reset();
+      showToast('Pesan Anda berhasil dikirim! Saya akan segera merespons pesan Anda.');
+    }, 1100);
+  });
+}
+
+/**
+ * Show Toast Notification
+ */
+function showToast(message) {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.className = 'toast-notification';
+    document.body.appendChild(toast);
+  }
+
+  toast.innerHTML = `
+    <span style="font-size: 1.25rem;">✅</span>
+    <div>
+      <strong style="display:block; font-size:0.92rem; color:#fff;">Berhasil!</strong>
+      <span style="font-size:0.85rem; color:#a1a1aa;">${message}</span>
+    </div>
+  `;
+
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 4000);
 }

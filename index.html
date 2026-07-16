@@ -3,54 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wahyu Noer Rahmat — Software Engineer & Full-Stack Architect Portfolio</title>
-  <meta name="description" content="Portfolio resmi Wahyu Noer Rahmat — Software Engineer, Full-Stack Web Developer, & Desktop Systems Engineer. Eksplorasi studi kasus, arsitektur sistem, dan proyek unggulan.">
-  <meta name="keywords" content="Wahyu Noer Rahmat, Software Engineer, Web Developer, Full Stack Developer, Portfolio, GitHub Pages, Desktop Engineer, Indonesia">
+  <title>Wahyu Noer Rahmat — Software Engineer & Web Architect Portfolio</title>
+  <meta name="description" content="Portfolio resmi & pusat tutorial open-source Wahyu Noer Rahmat — Software Engineer, Full-Stack Web Developer, & Desktop Systems Architect. Pelajari arsitektur dan studi kasus proyek secara langsung.">
+  <meta name="keywords" content="Wahyu Noer Rahmat, Software Engineer, Web Developer, Full Stack Developer, Portfolio, GitHub Pages, Desktop Engineer, Tutorial Open Source, Indonesia">
   <meta name="author" content="Wahyu Noer Rahmat">
   
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Wahyu Noer Rahmat — Software Engineer Portfolio">
-  <meta property="og:description" content="Portfolio interaktif Wahyu Noer Rahmat. Menampilkan studi kasus sistem web modern, aplikasi desktop berkinerja tinggi, dan arsitektur perangkat lunak.">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Wahyu Noer Rahmat — Software Engineer & Open Source Tutorial Center">
+  <meta property="og:description" content="Eksplorasi proyek dan panduan pembuatan (step-by-step tutorial) aplikasi web modern, AI, dan sistem desktop karya Wahyu Noer Rahmat.">
   <meta property="og:type" content="website">
 
-  <!-- Favicon / Icon -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Outfit & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-theme="default">
-
-  <!-- Ambient Light Effect -->
-  <div class="ambient-light ambient-light-1"></div>
-  <div class="ambient-light ambient-light-2"></div>
+<body data-theme="minimal-obsidian">
 
   <!-- ======================================================================
-       Header & Navigation with Theme Selector
+       Header & Navigation Bar (Minimalist Glassmorphism)
        ====================================================================== -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="brand-logo">
         <span class="logo-badge">W</span>
-        <span>Wahyu<span style="color: var(--accent-secondary);">.dev</span></span>
+        <span class="logo-text">Wahyu Noer Rahmat<span class="logo-domain">.github.io</span></span>
       </a>
 
       <div class="nav-right">
-        <!-- Theme Customizer Switcher -->
-        <div class="theme-switcher" title="Ubah Tema Warna Portfolio">
-          <button class="theme-btn active" data-theme-val="default" aria-label="Tema Cyber Cyan"></button>
-          <button class="theme-btn" data-theme-val="violet" aria-label="Tema Neon Violet"></button>
-          <button class="theme-btn" data-theme-val="emerald" aria-label="Tema Emerald Matrix"></button>
-          <button class="theme-btn" data-theme-val="amber" aria-label="Tema Sunset Amber"></button>
-        </div>
-
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">☰</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">☰</button>
 
         <ul class="nav-links" id="navLinks">
-          <li><a href="#about" class="nav-link">Tentang</a></li>
+          <li><a href="#about" class="nav-link">Profil</a></li>
+          <li><a href="#projects" class="nav-link active">Proyek &amp; Tutorial</a></li>
           <li><a href="#skills" class="nav-link">Keahlian</a></li>
-          <li><a href="#projects" class="nav-link">Proyek</a></li>
-          <li><a href="#activity" class="nav-link">Aktivitas</a></li>
           <li><a href="#experience" class="nav-link">Jejak Karir</a></li>
           <li><a href="#contact" class="nav-link nav-cta">Hubungi Saya</a></li>
         </ul>
@@ -60,191 +52,162 @@
 
   <main>
     <!-- ======================================================================
-         Hero Section with Interactive Multi-Tab Terminal Card
+         Hero Section: Executive Summary & Clean Technical Intro
          ====================================================================== -->
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-status">
             <span class="status-dot"></span>
-            <span>OPEN TO OPPORTUNITIES &amp; COLLABORATION</span>
+            <span>OPEN FOR ENGINEERING OPPORTUNITIES &amp; COLLABORATION</span>
           </div>
 
           <h1 class="hero-title">
-            Membangun Solusi Digital dengan <br>
-            <span class="highlight">Presisi &amp; Estetika</span>
+            Rekayasa Perangkat Lunak <br>
+            <span class="highlight">Presisi &amp; Transparan</span>
           </h1>
 
           <div class="hero-subtitle">
-            <span>&gt;</span>
+            <span class="prompt-symbol">&gt;</span>
             <span id="typewriter" class="typewriter-text">Software Engineer</span>
-            <span class="cursor" style="color: var(--accent-secondary);">_</span>
+            <span class="cursor">_</span>
           </div>
 
           <p class="hero-desc">
-            Halo, saya <strong>Wahyu Noer Rahmat</strong>. Saya merancang arsitektur aplikasi berbasis web modern, sistem desktop berkinerja tinggi, serta antarmuka intuitif berfokus pada pengalaman pengguna dan kualitas kode tingkat korporasi.
+            Selamat datang di portofolio dan pusat studi kasus open-source saya. Di sini Anda tidak hanya dapat melihat karya yang telah saya bangun, tetapi juga <strong>mempelajari panduan langkah demi langkah (tutorial step-by-step)</strong> mengenai arsitektur, logika sistem, dan cara menjalankannya di komputer Anda.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
-              <span>🚀 Eksplorasi Studi Kasus</span>
+              <span>📖 Eksplorasi Proyek &amp; Tutorial</span>
+              <span class="btn-arrow">→</span>
             </a>
             <a href="#contact" class="btn btn-secondary">
-              <span>💬 Mari Berdiskusi</span>
+              <span>💬 Mari Berkolaborasi</span>
             </a>
           </div>
         </div>
 
-        <!-- Interactive Multi-Tab Terminal Card -->
+        <!-- Clean Architecture & Config Preview Window -->
         <div class="hero-visual">
-          <div class="code-card">
-            <div class="code-header">
-              <div class="window-controls">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
+          <div class="code-window">
+            <div class="code-window-header">
+              <div class="window-buttons">
+                <span class="btn-dot red"></span>
+                <span class="btn-dot yellow"></span>
+                <span class="btn-dot green"></span>
               </div>
-              <div class="terminal-tabs">
-                <button class="tab-btn active" data-tab="tab-profile">profile.ts</button>
-                <button class="tab-btn" data-tab="tab-stack">stack.json</button>
-                <button class="tab-btn" data-tab="tab-terminal">terminal.sh</button>
+              <div class="window-tabs">
+                <button class="code-tab active" data-tab="tab-profile">engineer.profile.ts</button>
+                <button class="code-tab" data-tab="tab-principles">architecture.json</button>
               </div>
+              <div class="window-badge">TS / ES6+</div>
             </div>
 
-            <!-- TAB 1: profile.ts -->
-            <div class="code-content tab-pane active" id="tab-profile">
-              <div class="code-line"><span class="line-num">1</span><span class="code-text"><span class="keyword">interface</span> <span class="func">EngineerProfile</span> {</span></div>
+            <!-- TAB 1: engineer.profile.ts -->
+            <div class="code-window-body tab-pane active" id="tab-profile">
+              <div class="code-line"><span class="line-num">1</span><span class="code-text"><span class="keyword">interface</span> <span class="type">SoftwareEngineer</span> {</span></div>
               <div class="code-line"><span class="line-num">2</span><span class="code-text">&nbsp;&nbsp;<span class="prop">name</span>: <span class="string">'Wahyu Noer Rahmat'</span>;</span></div>
-              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;<span class="prop">role</span>: <span class="string">'Software Engineer &amp; Web Architect'</span>;</span></div>
+              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;<span class="prop">role</span>: <span class="string">'Full-Stack Web &amp; Desktop Systems Developer'</span>;</span></div>
               <div class="code-line"><span class="line-num">4</span><span class="code-text">&nbsp;&nbsp;<span class="prop">location</span>: <span class="string">'Indonesia 🇮🇩'</span>;</span></div>
-              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;<span class="prop">coreValues</span>: [<span class="string">'Clean Code'</span>, <span class="string">'High Performance'</span>, <span class="string">'Sleek UX'</span>];</span></div>
+              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;<span class="prop">mission</span>: <span class="string">'Delivering clean code, robust logic &amp; transparent docs'</span>;</span></div>
               <div class="code-line"><span class="line-num">6</span><span class="code-text">}</span></div>
               <div class="code-line"><span class="line-num">7</span><span class="code-text"></span></div>
-              <div class="code-line"><span class="line-num">8</span><span class="code-text"><span class="keyword">const</span> wahyu: <span class="func">EngineerProfile</span> = {</span></div>
-              <div class="code-line"><span class="line-num">9</span><span class="code-text">&nbsp;&nbsp;<span class="func">executeProject</span>: (<span class="prop">spec</span>) =&gt; {</span></div>
-              <div class="code-line"><span class="line-num">10</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> { <span class="prop">status</span>: <span class="string">'SUCCESS'</span>, <span class="prop">quality</span>: <span class="string">'ENTERPRISE_GRADE'</span> };</span></div>
+              <div class="code-line"><span class="line-num">8</span><span class="code-text"><span class="keyword">const</span> <span class="var">engineer</span>: <span class="type">SoftwareEngineer</span> = {</span></div>
+              <div class="code-line"><span class="line-num">9</span><span class="code-text">&nbsp;&nbsp;<span class="prop">buildSolution</span>: (<span class="prop">problem</span>: <span class="type">Spec</span>) =&gt; {</span></div>
+              <div class="code-line"><span class="line-num">10</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> { <span class="prop">architecture</span>: <span class="string">'MODULAR'</span>, <span class="prop">maintainability</span>: <span class="string">'HIGH'</span> };</span></div>
               <div class="code-line"><span class="line-num">11</span><span class="code-text">&nbsp;&nbsp;}</span></div>
               <div class="code-line"><span class="line-num">12</span><span class="code-text">};</span></div>
+              <div class="code-line"><span class="line-num">13</span><span class="code-text"><span class="keyword">export default</span> <span class="var">engineer</span>;</span></div>
             </div>
 
-            <!-- TAB 2: stack.json -->
-            <div class="code-content tab-pane" id="tab-stack">
+            <!-- TAB 2: architecture.json -->
+            <div class="code-window-body tab-pane" id="tab-principles">
               <div class="code-line"><span class="line-num">1</span><span class="code-text">{</span></div>
-              <div class="code-line"><span class="line-num">2</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"frontend"</span>: [<span class="string">"HTML5/CSS3"</span>, <span class="string">"TypeScript"</span>, <span class="string">"Modern Frameworks"</span>],</span></div>
-              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"backend"</span>: [<span class="string">"Node.js"</span>, <span class="string">"REST API"</span>, <span class="string">"SQL Database"</span>],</span></div>
-              <div class="code-line"><span class="line-num">4</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"desktop"</span>: [<span class="string">"GUI Engineering"</span>, <span class="string">"C++ / Java"</span>, <span class="string">"System Logic"</span>],</span></div>
-              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"workflow"</span>: [<span class="string">"Git / GitHub Pages"</span>, <span class="string">"CI/CD"</span>, <span class="string">"Unit Testing"</span>]</span></div>
-              <div class="code-line"><span class="line-num">6</span><span class="code-text">}</span></div>
+              <div class="code-line"><span class="line-num">2</span><span class="code-text">&nbsp;&nbsp;<span class="prop">"core_principles"</span>: [</span></div>
+              <div class="code-line"><span class="line-num">3</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Separation of Concerns (MVC &amp; Layered Architecture)"</span>,</span></div>
+              <div class="code-line"><span class="line-num">4</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Clean &amp; Self-Documenting Code Structure"</span>,</span></div>
+              <div class="code-line"><span class="line-num">5</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"High-Performance Vanilla CSS &amp; TypeScript Execution"</span>,</span></div>
+              <div class="code-line"><span class="line-num">6</span><span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Open-Source Knowledge Sharing &amp; Step-by-Step Guides"</span></span></div>
+              <div class="code-line"><span class="line-num">7</span><span class="code-text">&nbsp;&nbsp;]</span></div>
+              <div class="code-line"><span class="line-num">8</span><span class="code-text">}</span></div>
             </div>
 
-            <!-- TAB 3: terminal.sh -->
-            <div class="code-content tab-pane" id="tab-terminal">
-              <div class="code-line"><span class="code-text"><span class="comment"># Ketik perintah atau ketuk tombol aksi di bawah untuk mengeksplorasi</span></span></div>
-              <div class="term-input-row">
-                <span class="term-prompt">wahyu@portfolio:~$</span>
-                <input type="text" class="term-input" id="termInput" placeholder="Ketik 'help', 'skills', 'projects', atau 'contact'...">
-              </div>
-              <div class="term-output-box" id="termOutput">
-                Ketik <strong>help</strong> untuk melihat daftar perintah yang tersedia.
-              </div>
-              <div class="term-quick-btns">
-                <button class="term-chip" data-cmd="help">help</button>
-                <button class="term-chip" data-cmd="skills">skills</button>
-                <button class="term-chip" data-cmd="projects">projects</button>
-                <button class="term-chip" data-cmd="contact">contact</button>
-                <button class="term-chip" data-cmd="clear">clear</button>
-              </div>
+            <div class="code-window-footer">
+              <div class="footer-stat"><strong>9</strong> Open-Source Repos</div>
+              <div class="footer-stat"><strong>100%</strong> Step-by-Step Tutorials</div>
+              <div class="footer-stat" style="color: var(--accent-primary);">Live Sync Active ⚡</div>
             </div>
-          </div>
-
-          <div class="floating-badge">
-            <div class="badge-number">100%</div>
-            <div class="badge-text">Berkomitmen Pada Kualitas<br>&amp; Arsitektur Bersih</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         Stats Banner Section
+         Quick Stats Bar (Minimalist Executive Counter)
          ====================================================================== -->
-    <div class="stats-banner">
+    <div class="stats-bar">
       <div class="container stats-grid">
-        <div class="stat-item">
-          <h3><span class="counter" data-target="15">0</span>+</h3>
-          <p>Proyek &amp; Eksplorasi Selesai</p>
+        <div class="stat-card">
+          <div class="stat-num"><span class="counter" data-target="15">0</span>+</div>
+          <div class="stat-label">Studi Kasus &amp; Proyek GitHub Selesai</div>
         </div>
-        <div class="stat-item">
-          <h3><span class="counter" data-target="3">0</span>+</h3>
-          <p>Tahun Pengalaman &amp; Studi</p>
+        <div class="stat-card">
+          <div class="stat-num"><span class="counter" data-target="3">0</span>+</div>
+          <div class="stat-label">Tahun Pengalaman Rekayasa &amp; Eksplorasi</div>
         </div>
-        <div class="stat-item">
-          <h3><span>99</span>/100</h3>
-          <p>Skor Performa &amp; Kualitas UI</p>
+        <div class="stat-card">
+          <div class="stat-num"><span>99</span>/100</div>
+          <div class="stat-label">Skor Audit Kualitas &amp; Performa Kode</div>
         </div>
-        <div class="stat-item">
-          <h3><span>100</span>%</h3>
-          <p>Responsif &amp; Siap Produksi</p>
+        <div class="stat-card">
+          <div class="stat-num"><span>100</span>%</div>
+          <div class="stat-label">Akses Terbuka &amp; Panduan Tutorial</div>
         </div>
       </div>
     </div>
 
     <!-- ======================================================================
-         About Section
+         About Section: Philosophy & Engineering Standards
          ====================================================================== -->
-    <section id="about">
+    <section id="about" class="section-about">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">01. PROFIL &amp; FILOSOFI</div>
-          <h2 class="section-title">Rekayasa Perangkat Lunak <span>Berorientasi Solusi</span></h2>
-          <p class="section-subtitle">Menggabungkan arsitektur sistem yang tangguh dengan antarmuka pengguna digital yang modern dan intuitif.</p>
+          <div class="section-tag">01. PROFIL TEKNIS &amp; FILOSOFI</div>
+          <h2 class="section-title">Rekayasa Berorientasi Pada <br><span>Keandalan &amp; Pemahaman</span></h2>
+          <p class="section-subtitle">Saya percaya bahwa perangkat lunak yang hebat tidak hanya bekerja tanpa kesalahan, tetapi juga mudah dipelajari, dipelihara, dan dikembangkan oleh pengembang lain.</p>
         </div>
 
         <div class="about-grid">
-          <div class="about-text">
-            <h3>Standar Profesional &amp; Komitmen Kualitas Kode</h3>
+          <div class="about-main-text">
+            <h3>Standar Kualitas &amp; Tujuan Portofolio Terbuka</h3>
             <p>
-              Halo! Saya <strong>Wahyu Noer Rahmat</strong>. Sebagai seorang Software Engineer &amp; Web Developer, saya percaya bahwa aplikasi yang hebat tidak hanya berfungsi tanpa error, tetapi juga mudah dipelihara (maintainable), berskala tinggi (scalable), dan menghadirkan pengalaman pengguna yang menyenangkan.
+              Halo! Saya <strong>Wahyu Noer Rahmat</strong>. Selama mendalami ilmu komputer dan rekayasa perangkat lunak, saya menyadari bahwa dokumentasi yang jelas dan struktur kode yang rapi adalah kunci utama keberhasilan sebuah sistem teknologi.
             </p>
             <p>
-              Saya memiliki spesialisasi dalam merancang aplikasi web full-stack yang modern, pengembangan sistem desktop yang tangguh, serta penerapan praktik terbaik dalam rekayasa perangkat lunak.
+              Oleh karena itu, seluruh proyek publik yang saya tampilkan di dalam repositori <code>wahyunoerrahmat.github.io</code> ini sengaja dilengkapi dengan <strong>wizard tutorial interaktif</strong>. Jika Anda seorang mahasiswa, sesama pengembang, atau perekrut teknis yang ingin meninjau cara kerja sistem saya, Anda dapat dengan mudah mempelajari alur arsitekturnya langsung dari halaman ini.
             </p>
 
-            <!-- Core Value Pills -->
             <div class="core-values">
               <span class="value-pill">⚡ Clean Code Architecture</span>
-              <span class="value-pill">🎨 UX-Centric Interface</span>
-              <span class="value-pill">🛡️ Scalable &amp; Modular</span>
+              <span class="value-pill">🛡️ Robust Logic &amp; Type Safety</span>
+              <span class="value-pill">📚 Self-Documenting Repos</span>
               <span class="value-pill">🔍 Systematic Testing</span>
             </div>
-
-            <div class="about-highlights">
-              <div class="highlight-card">
-                <div class="highlight-icon">⚡</div>
-                <h4>Fast &amp; Optimized</h4>
-                <p>Aplikasi berkecepatan tinggi dengan waktu muat minimal dan animasi halus di 60 FPS.</p>
-              </div>
-              <div class="highlight-card">
-                <div class="highlight-icon">🏗️</div>
-                <h4>Scalable Architecture</h4>
-                <p>Desain modular yang siap dikembangkan secara terstruktur untuk kebutuhan masa depan.</p>
-              </div>
-            </div>
           </div>
 
-          <div>
-            <div class="highlight-card" style="padding: 2.5rem; border-color: rgba(99, 102, 241, 0.35); background: linear-gradient(145deg, rgba(17, 19, 28, 0.9), rgba(24, 27, 40, 0.7));">
-              <span style="display:inline-block; font-family: var(--font-code); font-size: 0.8rem; color: var(--accent-secondary); margin-bottom: 0.8rem;">ENGINEERING PRINCIPLE</span>
-              <h4 style="font-size: 1.45rem; margin-bottom: 1rem; color: var(--text-main);">Kode Bersih, Solusi Terukur</h4>
-              <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                &ldquo;Kualitas sebuah perangkat lunak tercermin dari kemudahannya untuk dipahami oleh pengembang lain dan kenyamanannya saat dioperasikan oleh pengguna akhir. Setiap antarmuka dan logika dirancang dengan tujuan yang jelas.&rdquo;
-              </p>
-              <div style="margin-top: 1.8rem; display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.4rem;">
-                <div style="width: 46px; height: 46px; border-radius: 12px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">W</div>
-                <div>
-                  <strong style="display: block; color: var(--text-main); font-size: 1.05rem;">Wahyu Noer Rahmat</strong>
-                  <span style="font-size: 0.85rem; color: var(--accent-secondary); font-family: var(--font-code);">Software Engineer · Full-Stack Architect</span>
-                </div>
+          <div class="about-quote-card">
+            <div class="quote-header">
+              <span class="quote-badge">ENGINEERING MANIFESTO</span>
+            </div>
+            <blockquote class="quote-text">
+              &ldquo;Kode yang bersih ditulis untuk dibaca oleh manusia terlebih dahulu, baru kemudian dieksekusi oleh mesin. Setiap fungsi, modul, dan antarmuka harus memiliki tanggung jawab yang jelas.&rdquo;
+            </blockquote>
+            <div class="quote-author">
+              <div class="author-avatar">W</div>
+              <div class="author-info">
+                <strong>Wahyu Noer Rahmat</strong>
+                <span>Software Engineer · Full-Stack Web Architect</span>
               </div>
             </div>
           </div>
@@ -253,517 +216,643 @@
     </section>
 
     <!-- ======================================================================
-         Skills Section (Interactive Matrix with Category Tabs)
+         Projects & Tutorial Center (THE CORE SECTION)
          ====================================================================== -->
-    <section id="skills">
+    <section id="projects" class="section-projects">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">02. MATRIX KEAHLIAN</div>
-          <h2 class="section-title">Kompetensi Teknis &amp; <span>Alat Kerja</span></h2>
-          <p class="section-subtitle">Eksplorasi mendalam di berbagai lapisan pengembangan perangkat lunak, mulai dari antarmuka visual hingga arsitektur backend.</p>
-        </div>
-
-        <!-- Skill Category Tabs -->
-        <div class="skill-tabs">
-          <button class="skill-tab-btn active" data-skill-tab="all">Semua Keahlian</button>
-          <button class="skill-tab-btn" data-skill-tab="frontend">Frontend &amp; UI Architecture</button>
-          <button class="skill-tab-btn" data-skill-tab="backend">Backend &amp; Database</button>
-          <button class="skill-tab-btn" data-skill-tab="desktop">Desktop &amp; Systems Engineering</button>
-          <button class="skill-tab-btn" data-skill-tab="workflow">DevOps &amp; Research</button>
-        </div>
-
-        <div class="skills-grid" id="skillsGrid">
-          <!-- Skill 1 -->
-          <div class="skill-card" data-skill-cat="frontend">
-            <div class="skill-card-header">
-              <span class="skill-icon">🌐</span>
-              <span class="skill-level">MAHIR</span>
-            </div>
-            <h4>HTML5 &amp; Modern Vanilla CSS</h4>
-            <p>Pemanfaatan CSS Grid, Flexbox, Custom Properties (Variables), Glassmorphism, serta animasi mikro responsif di 60 FPS.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="94%"></div>
-            </div>
+          <div class="section-tag">02. ETALASE REPOSITORI &amp; TUTORIAL PUBLIK</div>
+          <h2 class="section-title">Repositori GitHub &amp; <br><span>Tutorial Pembuatan Langkah demi Langkah</span></h2>
+          <p class="section-subtitle">Pilih proyek di bawah untuk meninjau spesifikasinya. Klik tombol <strong>"📖 Pelajari &amp; Tutorial Step-by-Step"</strong> untuk membuka panduan implementasi lengkap mulai dari kloning hingga eksekusi.</p>
+          <div class="github-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Terhubung langsung dengan Repositori GitHub Resmi @wahyunoerrahmat</span>
           </div>
-
-          <!-- Skill 2 -->
-          <div class="skill-card" data-skill-cat="frontend">
-            <div class="skill-card-header">
-              <span class="skill-icon">⚡</span>
-              <span class="skill-level">MAHIR</span>
-            </div>
-            <h4>JavaScript (ES6+) &amp; TypeScript</h4>
-            <p>Arsitektur modular ES Modules, penanganan asinkron (Async/Await), manipulasi DOM dinamis, serta type-safety.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="90%"></div>
-            </div>
-          </div>
-
-          <!-- Skill 3 -->
-          <div class="skill-card" data-skill-cat="desktop">
-            <div class="skill-card-header">
-              <span class="skill-icon">💻</span>
-              <span class="skill-level">LANJUTAN</span>
-            </div>
-            <h4>Desktop Applications &amp; GUI</h4>
-            <p>Pengembangan perangkat lunak desktop berkinerja tinggi, pengolahan alur data sistem, dan desain antarmuka pengguna desktop.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="86%"></div>
-            </div>
-          </div>
-
-          <!-- Skill 4 -->
-          <div class="skill-card" data-skill-cat="backend">
-            <div class="skill-card-header">
-              <span class="skill-icon">🗄️</span>
-              <span class="skill-level">LANJUTAN</span>
-            </div>
-            <h4>Database Modeling &amp; RESTful API</h4>
-            <p>Perancangan skema database relasional SQL, integrasi pertukaran data API yang aman, dan optimasi struktur data.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="84%"></div>
-            </div>
-          </div>
-
-          <!-- Skill 5 -->
-          <div class="skill-card" data-skill-cat="workflow">
-            <div class="skill-card-header">
-              <span class="skill-icon">🛠️</span>
-              <span class="skill-level">MAHIR</span>
-            </div>
-            <h4>Git, GitHub Pages &amp; Workflow</h4>
-            <p>Version control berstandar industri, kolaborasi tim git flow, automated deployment GitHub Pages, dan arsitektur kode bersih.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="92%"></div>
-            </div>
-          </div>
-
-          <!-- Skill 6 -->
-          <div class="skill-card" data-skill-cat="workflow">
-            <div class="skill-card-header">
-              <span class="skill-icon">🔬</span>
-              <span class="skill-level">LANJUTAN</span>
-            </div>
-            <h4>Metodologi Riset &amp; Pengujian Sistem</h4>
-            <p>Analisis kebutuhan sistem, perancangan arsitektur perangkat lunak, pengujian terstruktur, serta verifikasi kualitas kode.</p>
-            <div class="skill-progress">
-              <div class="skill-progress-bar" data-width="88%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         Projects Section with Professional High-Fidelity Previews & Case Studies
-         ====================================================================== -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">03. REPOSITORI &amp; TUTORIAL PUBLIK</div>
-          <h2 class="section-title">Repositori GitHub &amp; <span>Tutorial Pembuatan</span></h2>
-          <p class="section-subtitle">Eksplorasi proyek open-source publik di GitHub. Klik tutorial pada proyek untuk melihat panduan langkah demi langkah cara membangunnya.</p>
-          <div class="github-sync-badge">⚡ Terhubung Langsung dengan Repositori Publik GitHub @wahyunoerrahmat</div>
         </div>
 
         <!-- Category Filters -->
         <div class="filter-tabs">
-          <button class="filter-btn active" data-filter="all">Semua Proyek</button>
-          <button class="filter-btn" data-filter="web">Web &amp; Full-Stack</button>
-          <button class="filter-btn" data-filter="ai">AI &amp; Data Science</button>
-          <button class="filter-btn" data-filter="desktop">Desktop &amp; GUI</button>
-          <button class="filter-btn" data-filter="devops">DevOps &amp; Framework</button>
+          <button class="filter-btn active" data-filter="all">Semua Proyek (9)</button>
+          <button class="filter-btn" data-filter="ai">AI &amp; Machine Learning (3)</button>
+          <button class="filter-btn" data-filter="web">Web &amp; Full-Stack (3)</button>
+          <button class="filter-btn" data-filter="desktop">Desktop &amp; GUI (1)</button>
+          <button class="filter-btn" data-filter="devops">DevOps &amp; Framework (2)</button>
         </div>
 
         <div class="projects-grid" id="githubReposGrid">
-          <!-- Repo 1: Sistem Pakar Forward Chaining -->
-          <div class="project-card" data-category="ai">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • PYTHON AI</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#0f111a"/>
-                <circle cx="200" cy="105" r="65" fill="none" stroke="#6366f1" stroke-width="2" stroke-dasharray="8 8"/>
-                <circle cx="200" cy="105" r="40" fill="rgba(99,102,241,0.2)"/>
-                <text x="200" y="110" font-family="'Fira Code', monospace" font-weight="700" font-size="14" fill="#fff" text-anchor="middle">EXPERT SYSTEM AI</text>
-              </svg>
+          
+          <!-- Project 1: Sistem Pakar Forward Chaining -->
+          <article class="project-card" data-category="ai">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-ai">PYTHON · AI EXPERT SYSTEM</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Sistem Pakar Diagnosis Gizi Buruk Balita</h3>
             </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Forward Chaining</span>
-                <span class="tag">Sistem Pakar</span>
-              </div>
-              <h3>Sistem Pakar Diagnosis Gizi Buruk Balita</h3>
-              <p>Sistem pakar berbasis Python menggunakan metode Forward Chaining untuk mendiagnosis status gizi buruk pada balita berdasarkan evaluasi aturan gejala medik.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Rule-Based AI</strong>Mesin Inferensi</div>
-                <div class="metric-item"><strong>Python 3</strong>CLI &amp; Logic Engine</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="sistem-pakar">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Sistem pakar kecerdasan buatan berbasis Python menggunakan metode inferensi <strong>Forward Chaining</strong> untuk mendiagnosis status gizi buruk balita berdasarkan evaluasi aturan gejala medik secara presisi.
+              </p>
 
-          <!-- Repo 2: K-Means Literasi Jawa Barat -->
-          <div class="project-card" data-category="ai">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • DATA SCIENCE</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#11131c"/>
-                <circle cx="140" cy="90" r="28" fill="rgba(6,182,212,0.25)" stroke="#06b6d4" stroke-width="2"/>
-                <circle cx="250" cy="120" r="34" fill="rgba(168,85,247,0.25)" stroke="#a855f7" stroke-width="2"/>
-                <line x1="165" y1="100" x2="220" y2="115" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 4"/>
-              </svg>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">Machine Learning</span>
-                <span class="tag">K-Means Clustering</span>
-                <span class="tag">Python Data</span>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Mesin Inferensi</span>
+                  <span class="spec-value">Forward Chaining Rule-Based</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Lingkungan Eksekusi</span>
+                  <span class="spec-value">Python 3 CLI &amp; Logic Engine</span>
+                </div>
               </div>
-              <h3>Klasterisasi Literasi Jawa Barat (K-Means)</h3>
-              <p>Analisis data science dan klasterisasi tingkat literasi kabupaten/kota di Jawa Barat menerapkan algoritma unsupervised learning K-Means Clustering.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Elbow Method</strong>Clustering Optimal</div>
-                <div class="metric-item"><strong>Data Science</strong>Pandas / Scikit</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="k-means">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/K-Means_Literasi_Jawa_Barat" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Repo 3: Sistem Manajemen Absensi Magang & Karyawan -->
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • WEB SYSTEM</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#0a0b10"/>
-                <rect x="50" y="40" width="300" height="130" rx="10" fill="#181b28" stroke="#6366f1" stroke-width="2"/>
-                <rect x="80" y="70" width="110" height="20" rx="4" fill="rgba(99,102,241,0.3)"/>
-                <rect x="80" y="105" width="240" height="15" rx="4" fill="rgba(255,255,255,0.08)"/>
-              </svg>
-            </div>
-            <div class="project-body">
               <div class="project-tags">
-                <span class="tag">Full-Stack Web</span>
-                <span class="tag">Absensi Real-Time</span>
-                <span class="tag">Database SQL</span>
-              </div>
-              <h3>Sistem Manajemen Absensi Magang &amp; Karyawan</h3>
-              <p>Aplikasi pencatatan kehadiran presensi magang terintegrasi dengan validasi jam masuk/pulang, rekapitulasi kehadiran, serta dasbor pengawas.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Multi-Role</strong>Admin &amp; Peserta</div>
-                <div class="metric-item"><strong>Real-Time Log</strong>Presensi Terverifikasi</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="absensi-magang">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi" target="_blank" class="project-link">⭐ Repo GitHub</a>
+                <span class="tag">#Python3</span>
+                <span class="tag">#ForwardChaining</span>
+                <span class="tag">#ExpertSystem</span>
+                <span class="tag">#ArtificialIntelligence</span>
               </div>
             </div>
-          </div>
 
-          <!-- Repo 4: BawasluKabBogor -->
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • PORTAL WEB</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#11131c"/>
-                <rect x="40" y="35" width="320" height="140" rx="8" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
-                <text x="200" y="110" font-family="'Outfit', sans-serif" font-weight="800" font-size="18" fill="#fff" text-anchor="middle">PORTAL INFORMASI BAWASLU</text>
-              </svg>
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="sistem-pakar">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/SISTEM-PAKAR-DIAGNOSIS-GIZI-BURUK-PADA-BALITA-MENGGUNAKAN-METODE-FORWARD-CHAINING-BERBASIS-PYTHON" target="_blank" class="btn-github-link" aria-label="Buka Repositori Sistem Pakar di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
             </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">CMS Portal</span>
-                <span class="tag">Web Architecture</span>
-                <span class="tag">Responsive UI</span>
-              </div>
-              <h3>Sistem Portal Informasi Bawaslu Kab. Bogor</h3>
-              <p>Portal web pengawasan pemilu dan informasi publik Kabupaten Bogor dengan penyajian dokumen regulasi, pengarsipan berita, serta panel administrasi.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Informasi Publik</strong>Transparan &amp; Cepat</div>
-                <div class="metric-item"><strong>SEO Friendly</strong>Struktur Semantik</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="bawaslu-bogor">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/BawasluKabBogor" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
+          </article>
 
-          <!-- Repo 5: LearnDevOpsEgineer -->
-          <div class="project-card" data-category="devops">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • DEVOPS</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#0f111a"/>
-                <path d="M100 105 L160 55 L220 105 L160 155 Z" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
-                <path d="M220 105 L280 55 L340 105 L280 155 Z" fill="rgba(6,182,212,0.2)" stroke="#06b6d4" stroke-width="2"/>
-              </svg>
+          <!-- Project 2: K-Means Literasi Jawa Barat -->
+          <article class="project-card" data-category="ai">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-ai">MACHINE LEARNING · DATA SCIENCE</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Klasterisasi Literasi Jawa Barat (K-Means)</h3>
             </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">Docker</span>
-                <span class="tag">CI/CD Pipeline</span>
-                <span class="tag">DevOps Practice</span>
-              </div>
-              <h3>DevOps Engineering Roadmap &amp; CI/CD Practice</h3>
-              <p>Implementasi otomatisasi infrastruktur, kontainerisasi aplikasi menggunakan Docker, serta pengujian pipa CI/CD berstandar rekayasa keandalan sistem.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Docker Ready</strong>Containerization</div>
-                <div class="metric-item"><strong>Automated</strong>Continuous Integration</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="devops-practice">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/LearnDevOpsEgineer" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Analisis data science dan klasterisasi tingkat literasi daerah di Jawa Barat menggunakan algoritma unsupervised learning <strong>K-Means Clustering</strong> dengan penentuan K optimal melalui <strong>Elbow Method</strong>.
+              </p>
 
-          <!-- Repo 6: Steganografi Citra Digital -->
-          <div class="project-card" data-category="ai">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • IMAGE PROCESSING</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#11131c"/>
-                <rect x="80" y="45" width="240" height="120" rx="6" fill="#181b28" stroke="#a855f7" stroke-width="2"/>
-                <text x="200" y="110" font-family="'Fira Code', monospace" font-size="14" fill="#34d399" text-anchor="middle">LSB STEGANOGRAPHY</text>
-              </svg>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">Image Processing</span>
-                <span class="tag">Steganografi LSB</span>
-                <span class="tag">Kriptografi</span>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Algoritma Klaster</span>
+                  <span class="spec-value">K-Means &amp; Elbow Method Optimization</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Pustaka Ilmiah</span>
+                  <span class="spec-value">Pandas, NumPy, Scikit-Learn, Matplotlib</span>
+                </div>
               </div>
-              <h3>Pengolahan Citra Digital &amp; Steganografi LSB</h3>
-              <p>Algoritma manipulasi bit piksel Least Significant Bit (LSB) untuk menyisipkan dan mengekstraksi pesan rahasia di dalam berkas gambar digital.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>LSB Encoding</strong>Keamanan Pesan</div>
-                <div class="metric-item"><strong>Piksel Presisi</strong>Tanpa Distorsi Visual</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="steganografi">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/metode-manipulasi-citra-digital-steganografi" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Repo 7: Desktop Aplikasi Manajemen GUI -->
-          <div class="project-card" data-category="desktop">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • DESKTOP GUI</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#0a0b10"/>
-                <rect x="50" y="30" width="300" height="150" rx="8" fill="#181b28" stroke="#06b6d4" stroke-width="2"/>
-                <circle cx="70" cy="48" r="5" fill="#ff5f56"/>
-                <circle cx="85" cy="48" r="5" fill="#ffbd2e"/>
-                <circle cx="100" cy="48" r="5" fill="#27c93f"/>
-              </svg>
-            </div>
-            <div class="project-body">
               <div class="project-tags">
-                <span class="tag">Desktop App</span>
-                <span class="tag">GUI Event-Driven</span>
-                <span class="tag">System Engineering</span>
-              </div>
-              <h3>Aplikasi Desktop &amp; Manajemen Form GUI</h3>
-              <p>Pengembangan perangkat lunak berbasis sistem desktop antarmuka GUI untuk pemrosesan data, kalkulasi logis, serta rekapitulasi lokal.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Native App</strong>Cepat &amp; Ringan</div>
-                <div class="metric-item"><strong>Event-Driven</strong>Arsitektur GUI</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="desktop-gui">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/tugas1-pemrograman-desktop" target="_blank" class="project-link">⭐ Repo GitHub</a>
+                <span class="tag">#MachineLearning</span>
+                <span class="tag">#KMeans</span>
+                <span class="tag">#DataScience</span>
+                <span class="tag">#ElbowMethod</span>
               </div>
             </div>
-          </div>
 
-          <!-- Repo 8: CRUD Kampus Simple -->
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • REST API</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#11131c"/>
-                <text x="200" y="110" font-family="'Fira Code', monospace" font-size="22" font-weight="700" fill="#6366f1" text-anchor="middle">CRUD / REST API</text>
-              </svg>
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="k-means">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/K-Means_Literasi_Jawa_Barat" target="_blank" class="btn-github-link" aria-label="Buka Repositori K-Means di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
             </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">CRUD Architecture</span>
-                <span class="tag">Database SQL</span>
-                <span class="tag">Backend Web</span>
-              </div>
-              <h3>Sistem CRUD &amp; REST API Manajemen Akademik</h3>
-              <p>Arsitektur penanganan data akademik kampus dengan operasi lengkap Create, Read, Update, Delete serta validasi integritas basis data.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>RESTful API</strong>Endpoint Terstruktur</div>
-                <div class="metric-item"><strong>Clean Logic</strong>Query Teroptimasi</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="crud-kampus">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/CRUD-Kampus-Simple" target="_blank" class="project-link">⭐ Repo GitHub</a>
-              </div>
-            </div>
-          </div>
+          </article>
 
-          <!-- Repo 9: PAWF (Pengembangan Aplikasi Web Framework) -->
-          <div class="project-card" data-category="devops">
-            <div class="project-image">
-              <span class="project-badge-top">PUBLIC REPO • FRAMEWORK MVC</span>
-              <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="210" fill="#0f111a"/>
-                <text x="200" y="110" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" fill="#a855f7" text-anchor="middle">MVC FRAMEWORK ARCH</text>
-              </svg>
+          <!-- Project 3: Sistem Absensi Magang -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-web">FULL-STACK WEB SYSTEM</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Sistem Manajemen Absensi Magang &amp; Karyawan</h3>
             </div>
-            <div class="project-body">
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Aplikasi pencatatan kehadiran presensi magang terintegrasi dengan validasi jam masuk/pulang, rekapitulasi kehadiran otomatis, sistem otentikasi multi-peran, dan dasbor pengawas real-time.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Arsitektur Web</span>
+                  <span class="spec-value">Multi-Role Session &amp; Real-Time Logging</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Manajemen Data</span>
+                  <span class="spec-value">Relational SQL Database Integrity</span>
+                </div>
+              </div>
+
               <div class="project-tags">
-                <span class="tag">MVC Architecture</span>
-                <span class="tag">Web Framework</span>
-                <span class="tag">Routing Engine</span>
-              </div>
-              <h3>Arsitektur Web Framework MVC (PAWF)</h3>
-              <p>Studi penerapan pola rancang Model-View-Controller (MVC), routing dinamis, middleware sesi, serta pemodelan ORM pada aplikasi web modern.</p>
-              <div class="project-metrics">
-                <div class="metric-item"><strong>Modular MVC</strong>Clean Separation</div>
-                <div class="metric-item"><strong>Secure Routing</strong>Terproteksi</div>
-              </div>
-              <div class="project-links">
-                <button class="btn-case-study" data-tutorial="pawf-mvc">📖 Tutorial Cara Membuat</button>
-                <a href="https://github.com/wahyunoerrahmat/pawf" target="_blank" class="project-link">⭐ Repo GitHub</a>
+                <span class="tag">#FullStackWeb</span>
+                <span class="tag">#AttendanceSystem</span>
+                <span class="tag">#SQLDatabase</span>
+                <span class="tag">#CleanUI</span>
               </div>
             </div>
-          </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="absensi-magang">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi" target="_blank" class="btn-github-link" aria-label="Buka Repositori Absensi Magang di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Portal Bawaslu Kab. Bogor -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-web">GOVERNMENT CMS PORTAL</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Sistem Portal Informasi Bawaslu Kab. Bogor</h3>
+            </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Portal web informasi publik pengawasan pemilu Kabupaten Bogor dengan fitur penyajian dokumen regulasi hukum, pengarsipan berita pengawasan, serta panel administrasi terproteksi.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Fitur Portal</span>
+                  <span class="spec-value">CMS Berita &amp; Arsip Dokumen Regulasi</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Kualitas Antarmuka</span>
+                  <span class="spec-value">Responsive Mobile-First &amp; SEO Friendly</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">#CMSPortal</span>
+                <span class="tag">#WebArchitecture</span>
+                <span class="tag">#ResponsiveUI</span>
+                <span class="tag">#PublicInformation</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="bawaslu-bogor">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/BawasluKabBogor" target="_blank" class="btn-github-link" aria-label="Buka Repositori Portal Bawaslu di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: LearnDevOpsEgineer -->
+          <article class="project-card" data-category="devops">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-devops">DEVOPS · CI/CD AUTOMATION</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">DevOps Engineering Roadmap &amp; CI/CD Practice</h3>
+            </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Implementasi otomatisasi pipa pengujian Continuous Integration/Continuous Deployment (CI/CD), kontainerisasi aplikasi menggunakan <strong>Docker</strong>, serta dokumentasi praktik terbaik rekayasa keandalan sistem.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Kontainerisasi</span>
+                  <span class="spec-value">Docker Multi-Stage Build &amp; Container Isolation</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Otomatisasi Pipeline</span>
+                  <span class="spec-value">Automated GitHub Actions Testing &amp; Workflow</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">#Docker</span>
+                <span class="tag">#DevOps</span>
+                <span class="tag">#CICD</span>
+                <span class="tag">#SystemReliability</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="devops-practice">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/LearnDevOpsEgineer" target="_blank" class="btn-github-link" aria-label="Buka Repositori DevOps di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6: Steganografi Citra Digital -->
+          <article class="project-card" data-category="ai">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-ai">IMAGE PROCESSING · CRYPTOGRAPHY</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Pengolahan Citra Digital &amp; Steganografi LSB</h3>
+            </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Penerapan algoritma manipulasi bit piksel <strong>Least Significant Bit (LSB)</strong> berbasis Python untuk menyisipkan dan mengekstraksi pesan rahasia di dalam berkas gambar digital tanpa menimbulkan distorsi visual yang terlihat.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Metode Penyandian</span>
+                  <span class="spec-value">Least Significant Bit (LSB) Pixel Manipulation</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Keamanan Data</span>
+                  <span class="spec-value">Lossless Encoding &amp; Extraction Engine</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">#ImageProcessing</span>
+                <span class="tag">#Steganography</span>
+                <span class="tag">#LSB</span>
+                <span class="tag">#PythonCrypto</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="steganografi">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/metode-manipulasi-citra-digital-steganografi" target="_blank" class="btn-github-link" aria-label="Buka Repositori Steganografi di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 7: Desktop GUI App -->
+          <article class="project-card" data-category="desktop">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-desktop">DESKTOP GUI · SYSTEMS ENGINEERING</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Aplikasi Desktop &amp; Manajemen Form GUI Interaktif</h3>
+            </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Pengembangan perangkat lunak berbasis sistem desktop dengan arsitektur <strong>Event-Driven GUI</strong> untuk pemrosesan data, validasi input pengguna lokal, serta rekapitulasi data berkinerja cepat.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Model Arsitektur</span>
+                  <span class="spec-value">Event-Driven Form Lifecycle &amp; Native Logic</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Karakteristik Sistem</span>
+                  <span class="spec-value">Fast Desktop Execution &amp; Low Memory Footprint</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">#DesktopApp</span>
+                <span class="tag">#GUIEngineering</span>
+                <span class="tag">#EventDriven</span>
+                <span class="tag">#NativeDevelopment</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="desktop-gui">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/tugas1-pemrograman-desktop" target="_blank" class="btn-github-link" aria-label="Buka Repositori Desktop GUI di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 8: CRUD Kampus Simple -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-web">REST API · BACKEND ARCHITECTURE</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Sistem CRUD &amp; REST API Manajemen Akademik</h3>
+            </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Arsitektur penanganan data akademik kampus terstruktur dengan implementasi operasi lengkap Create, Read, Update, dan Delete (CRUD), penanganan HTTP status codes yang tepat, dan sanitasi query SQL.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Desain Endpoint</span>
+                  <span class="spec-value">RESTful HTTP API Endpoints &amp; JSON Responses</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Keandalan Query</span>
+                  <span class="spec-value">Prepared Statements &amp; Data Integrity Check</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">#RESTAPI</span>
+                <span class="tag">#CRUD</span>
+                <span class="tag">#BackendSystem</span>
+                <span class="tag">#SQLDatabase</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="crud-kampus">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/CRUD-Kampus-Simple" target="_blank" class="btn-github-link" aria-label="Buka Repositori CRUD Kampus di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 9: PAWF Web Framework -->
+          <article class="project-card" data-category="devops">
+            <div class="project-card-header">
+              <div class="header-badges">
+                <span class="cat-pill cat-devops">WEB FRAMEWORK · MVC ARCHITECTURE</span>
+                <span class="status-pill">Public Repo</span>
+              </div>
+              <h3 class="project-title">Arsitektur Web Framework MVC (PAWF)</h3>
+            </div>
+            
+            <div class="project-card-body">
+              <p class="project-summary">
+                Studi rancang bangun kerangka kerja aplikasi web mandiri menerapkan pola arsitektur <strong>Model-View-Controller (MVC)</strong>, sistem routing URL dinamis, penanganan middleware, serta abstraksi akses data.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Pola Rancang</span>
+                  <span class="spec-value">Modular MVC Architecture &amp; Clean Separation</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Engine Routing</span>
+                  <span class="spec-value">Dynamic URI Routing &amp; Controller Dispatcher</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">#MVC</span>
+                <span class="tag">#WebFramework</span>
+                <span class="tag">#CleanArchitecture</span>
+                <span class="tag">#SoftwarePattern</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <button class="btn-tutorial" data-tutorial="pawf-mvc">
+                <span class="btn-icon">📖</span>
+                <span>Pelajari &amp; Tutorial Step-by-Step</span>
+              </button>
+              <a href="https://github.com/wahyunoerrahmat/pawf" target="_blank" class="btn-github-link" aria-label="Buka Repositori PAWF di GitHub">
+                <span>⭐ GitHub</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         Interactive Step-by-Step Tutorial Modal Dialog (`#caseModal`)
+         Interactive Step-by-Step Tutorial Wizard Modal (`#caseModal`)
          ====================================================================== -->
-    <div class="modal-overlay" id="caseModal">
+    <div class="modal-overlay" id="caseModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
       <div class="modal-content">
         <div class="modal-header">
-          <div>
-            <span class="section-tag" style="margin-bottom:0.2rem;" id="modalTag">TUTORIAL CARA MEMBUAT PROYEK</span>
-            <h3 style="font-size:1.5rem; color:var(--text-main);" id="modalTitle">Judul Tutorial Proyek</h3>
+          <div class="modal-header-meta">
+            <span class="modal-tag" id="modalTag">TUTORIAL CARA MEMBUAT PROYEK</span>
+            <h3 class="modal-title" id="modalTitle">Judul Tutorial Proyek</h3>
           </div>
-          <button class="modal-close" id="modalClose" aria-label="Tutup Modal">✕</button>
+          <button class="modal-close" id="modalClose" aria-label="Tutup Jendela Tutorial">✕</button>
         </div>
+        
         <div class="modal-body" id="modalBody">
-          <!-- Step-by-Step Tutorial Content Loaded dynamically via JS -->
+          <!-- Dynamically populated step-by-step tutorial content via js/main.js -->
         </div>
       </div>
     </div>
 
-
     <!-- ======================================================================
-         Engineering Activity & Contribution Matrix Section (`#activity`)
+         Technical Competencies Matrix (`#skills`)
          ====================================================================== -->
-    <section id="activity">
+    <section id="skills" class="section-skills">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">04. ENGINEERING DISCIPLINE</div>
-          <h2 class="section-title">Konsistensi &amp; <span>Aktivitas Kode</span></h2>
-          <p class="section-subtitle">Dedikasi dalam penulisan kode berkesinambungan, eksplorasi teknologi baru, serta pengembangan proyek open-source.</p>
+          <div class="section-tag">03. KOMPETENSI &amp; ALAT KERJA</div>
+          <h2 class="section-title">Matrix Keahlian &amp; <br><span>Spesialisasi Teknis</span></h2>
+          <p class="section-subtitle">Struktur keahlian teknis yang dipelihara secara konsisten untuk merancang dan membangun sistem perangkat lunak berkualitas tinggi.</p>
         </div>
 
-        <div class="activity-grid">
-          <div class="activity-card">
-            <div class="contrib-header">
-              <h3>Simulasi Kontribus GitHub &amp; Kode Mingguan</h3>
-              <div class="contrib-legend">
-                <span>Lebih sedikit</span>
-                <span class="contrib-box" style="background:rgba(255,255,255,0.05)"></span>
-                <span class="contrib-box contrib-lvl-1"></span>
-                <span class="contrib-box contrib-lvl-2"></span>
-                <span class="contrib-box contrib-lvl-3"></span>
-                <span class="contrib-box contrib-lvl-4"></span>
-                <span>Lebih banyak</span>
+        <div class="competency-grid">
+          <!-- Domain 1: Frontend -->
+          <div class="competency-card">
+            <div class="competency-header">
+              <span class="competency-icon">🌐</span>
+              <div class="competency-title">
+                <h4>Frontend &amp; UI Architecture</h4>
+                <span>Modern Web Presentation</span>
               </div>
             </div>
+            <p class="competency-desc">
+              Pengembangan antarmuka web responsif, berkecepatan tinggi, dan dapat diakses dengan standar eksekusi 60 FPS tanpa kelebihan beban framework.
+            </p>
+            <div class="competency-tags">
+              <span class="skill-chip">HTML5 Semantik</span>
+              <span class="skill-chip">Modern Vanilla CSS3</span>
+              <span class="skill-chip">JavaScript (ES6+)</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">CSS Grid &amp; Flexbox</span>
+              <span class="skill-chip">Glassmorphism UI</span>
+            </div>
+          </div>
 
-            <!-- Contribution Grid generated via JS -->
-            <div class="contrib-matrix" id="contribMatrix"></div>
+          <!-- Domain 2: Backend -->
+          <div class="competency-card">
+            <div class="competency-header">
+              <span class="competency-icon">⚙️</span>
+              <div class="competency-title">
+                <h4>Backend &amp; API Architecture</h4>
+                <span>Server &amp; Data Layer</span>
+              </div>
+            </div>
+            <p class="competency-desc">
+              Perancangan layanan API RESTful yang aman, pemodelan skema database relasional yang dinormalisasi, dan penanganan alur logika bisnis.
+            </p>
+            <div class="competency-tags">
+              <span class="skill-chip">Node.js Ecosystem</span>
+              <span class="skill-chip">RESTful HTTP APIs</span>
+              <span class="skill-chip">Relational SQL Database</span>
+              <span class="skill-chip">MVC Architecture</span>
+              <span class="skill-chip">Query Optimization</span>
+              <span class="skill-chip">JSON Schema Validation</span>
+            </div>
+          </div>
+
+          <!-- Domain 3: AI & Data -->
+          <div class="competency-card">
+            <div class="competency-header">
+              <span class="competency-icon">🧠</span>
+              <div class="competency-title">
+                <h4>AI &amp; Data Science Processing</h4>
+                <span>Algorithmic Intelligence</span>
+              </div>
+            </div>
+            <p class="competency-desc">
+              Implementasi algoritma penalaran sistem pakar rule-based, klasterisasi machine learning, serta teknik manipulasi citra digital tingkat lanjut.
+            </p>
+            <div class="competency-tags">
+              <span class="skill-chip">Python 3 Execution</span>
+              <span class="skill-chip">Forward Chaining Inference</span>
+              <span class="skill-chip">K-Means Clustering</span>
+              <span class="skill-chip">Elbow Method Analysis</span>
+              <span class="skill-chip">Pandas &amp; Scikit-Learn</span>
+              <span class="skill-chip">LSB Pixel Steganography</span>
+            </div>
+          </div>
+
+          <!-- Domain 4: Desktop & Systems -->
+          <div class="competency-card">
+            <div class="competency-header">
+              <span class="competency-icon">💻</span>
+              <div class="competency-title">
+                <h4>Desktop Systems &amp; GUI</h4>
+                <span>Native Application Logic</span>
+              </div>
+            </div>
+            <p class="competency-desc">
+              Pengembangan aplikasi GUI desktop event-driven dengan manajemen form interaktif, keandalan penanganan eksepsi, dan efisiensi memori.
+            </p>
+            <div class="competency-tags">
+              <span class="skill-chip">Event-Driven GUI Design</span>
+              <span class="skill-chip">Form Lifecycle Management</span>
+              <span class="skill-chip">C++ / Java Foundations</span>
+              <span class="skill-chip">Local Data Handling</span>
+              <span class="skill-chip">System Resource Control</span>
+            </div>
+          </div>
+
+          <!-- Domain 5: DevOps & Practice -->
+          <div class="competency-card">
+            <div class="competency-header">
+              <span class="competency-icon">🛠️</span>
+              <div class="competency-title">
+                <h4>DevOps &amp; Research Discipline</h4>
+                <span>Workflow &amp; Reliability</span>
+              </div>
+            </div>
+            <p class="competency-desc">
+              Penerapan kontrol versi terstruktur, otomatisasi kontainer Docker, pengujian pipa CI/CD, serta penulisan dokumentasi teknis yang jelas.
+            </p>
+            <div class="competency-tags">
+              <span class="skill-chip">Git Version Control</span>
+              <span class="skill-chip">GitHub Pages Deployment</span>
+              <span class="skill-chip">Docker Containerization</span>
+              <span class="skill-chip">CI/CD Pipeline YAML</span>
+              <span class="skill-chip">Systematic Code Audit</span>
+              <span class="skill-chip">Technical Documentation</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         Experience & Education Roadmap Section
+         Career Roadmap & Education Timeline (`#experience`)
          ====================================================================== -->
-    <section id="experience">
+    <section id="experience" class="section-roadmap">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">05. PETA PERJALANAN</div>
-          <h2 class="section-title">Jejak Karir &amp; <span>Pendidikan</span></h2>
-          <p class="section-subtitle">Perjalanan akademis dan rekam jejak pengembangan perangkat lunak dalam menghadirkan solusi teknologi.</p>
+          <div class="section-tag">04. JEJAK KARIR &amp; STUDI</div>
+          <h2 class="section-title">Peta Perjalanan &amp; <br><span>Dedikasi Rekayasa</span></h2>
+          <p class="section-subtitle">Rekam jejak akademis dan pengembangan profesional dalam merancang dan menghadirkan solusi perangkat lunak bermutu tinggi.</p>
         </div>
 
-        <div class="timeline">
-          <!-- Timeline Item 1 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="timeline-year">SEKARANG</span>
+        <div class="roadmap-timeline">
+          <div class="roadmap-item">
+            <div class="roadmap-node"></div>
+            <div class="roadmap-content">
+              <div class="roadmap-meta">
+                <span class="roadmap-badge">SEKARANG</span>
+                <span class="roadmap-role">Software Engineer · Full-Stack Architect</span>
               </div>
-              <h3>Software Engineer &amp; Full-Stack Architect</h3>
-              <h4>Independent Software Developer &amp; Tech Explorer</h4>
+              <h3>Independent Software Developer &amp; Open Source Explorer</h3>
               <p>
-                Mengembangkan berbagai proyek perangkat lunak dari aplikasi web modern berkinerja tinggi hingga arsitektur desktop. Fokus pada penerapan arsitektur bersih, desain antarmuka interaktif, dan pengujian keandalan aplikasi.
+                Aktif merancang, membangun, dan mempublikasikan berbagai proyek perangkat lunak dari aplikasi web modern, sistem pakar AI, hingga aplikasi desktop GUI. Berkomitmen menghadirkan arsitektur kode yang terstruktur, dokumentasi transparan, dan tutorial langkah demi langkah bagi komunitas.
               </p>
-              <div class="timeline-tags">
-                <span class="tag">Modern JavaScript/TypeScript</span>
-                <span class="tag">Web Architecture</span>
-                <span class="tag">Desktop Engineering</span>
-              </div>
             </div>
           </div>
 
-          <!-- Timeline Item 2 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="timeline-year">MAHASISWA INFORMATIKA</span>
+          <div class="roadmap-item">
+            <div class="roadmap-node"></div>
+            <div class="roadmap-content">
+              <div class="roadmap-meta">
+                <span class="roadmap-badge">PENDIDIKAN TINGGI</span>
+                <span class="roadmap-role">Mahasiswa Teknik Informatika</span>
               </div>
-              <h3>Studi Rekayasa Perangkat Lunak &amp; Komputasi</h3>
-              <h4>Pendidikan Tinggi Teknik Informatika</h4>
+              <h3>Studi Rekayasa Perangkat Lunak &amp; Komputasi Algoritmik</h3>
               <p>
-                Mendalami algoritma komputasi, struktur data tingkat lanjut, perancangan basis data relasional, metodologi penelitian, serta praktik rekayasa perangkat lunak terstruktur.
+                Mendalami landasan ilmiah rekayasa perangkat lunak, algoritma struktur data, perancangan basis data relasional yang dinormalisasi, metodologi penelitian sistem, serta pengujian keandalan perangkat lunak secara sistematis.
               </p>
-              <div class="timeline-tags">
-                <span class="tag">Software Engineering</span>
-                <span class="tag">Database Systems</span>
-                <span class="tag">System Analysis</span>
-              </div>
             </div>
           </div>
 
-          <!-- Timeline Item 3 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <span class="timeline-year">OPEN SOURCE CONTRIBUTOR</span>
+          <div class="roadmap-item">
+            <div class="roadmap-node"></div>
+            <div class="roadmap-content">
+              <div class="roadmap-meta">
+                <span class="roadmap-badge">KONTRIBUTOR GITHUB</span>
+                <span class="roadmap-role">GitHub Pages &amp; Public Repository Maintenance</span>
               </div>
-              <h3>Pengembang Proyek Open-Source GitHub</h3>
-              <h4>GitHub Pages &amp; Community Collaborator</h4>
+              <h3>Pengembang Proyek Open-Source &amp; Tutorial Center</h3>
               <p>
-                Mempublish repositori kode terbuka, mendokumentasikan praktik terbaik pengembangan web modern, serta membangun portofolio digital interaktif yang siap diuji publik.
+                Membuka kode sumber (open-source) untuk setiap proyek akademik dan studi kasus independen di GitHub agar dapat diuji, dipelajari, dan dijadikan referensi langsung oleh sesama pengembang perangkat lunak.
               </p>
-              <div class="timeline-tags">
-                <span class="tag">Git Version Control</span>
-                <span class="tag">GitHub Pages</span>
-                <span class="tag">Clean Documentation</span>
-              </div>
             </div>
           </div>
         </div>
@@ -771,100 +860,103 @@
     </section>
 
     <!-- ======================================================================
-         Contact Section
+         Contact & Discussion (`#contact`)
          ====================================================================== -->
-    <section id="contact">
+    <section id="contact" class="section-contact">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">06. KONEKSI &amp; KOLABORASI</div>
-          <h2 class="section-title">Mari Berdiskusi &amp; <span>Wujudkan Ide</span></h2>
-          <p class="section-subtitle"> Terbuka untuk diskusi proyek rekayasa perangkat lunak, kolaborasi pengembangan aplikasi, atau sekadar bertukar wawasan teknologi.</p>
+          <div class="section-tag">05. KONEKSI &amp; DISKUSI</div>
+          <h2 class="section-title">Siap Berdiskusi &amp; <br><span>Membangun Solusi Bersama?</span></h2>
+          <p class="section-subtitle">Saya terbuka untuk diskusi teknis rekayasa perangkat lunak, peluang kolaborasi proyek, atau bertukar wawasan seputar teknologi web dan sistem.</p>
         </div>
 
         <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Siap Bekerja Sama Mengembangkan Solusi Digital?</h3>
+          <div class="contact-card-info">
+            <h3>Hubungi Secara Langsung</h3>
             <p>
-              Silakan hubungi saya langsung melalui email atau media sosial profesional di bawah ini. Saya akan merespons pesan Anda secepatnya.
+              Apakah Anda memiliki pertanyaan mengenai arsitektur pada repositori saya, membutuhkan konsultasi sistem, atau ingin mendiskusikan peluang kerja sama? Silakan hubungi saya melalui email atau jaringan profesional di bawah ini.
             </p>
 
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-item-left">
-                  <div class="contact-item-icon">✉️</div>
-                  <div>
-                    <strong style="display: block;">Email Profesional</strong>
-                    <span style="color: var(--text-muted);" id="emailText">wahyunoerrahmat@gmail.com</span>
-                  </div>
+            <div class="contact-channels">
+              <!-- Email Box -->
+              <div class="channel-box">
+                <div class="channel-icon">✉️</div>
+                <div class="channel-details">
+                  <span class="channel-label">Email Profesional</span>
+                  <strong class="channel-value" id="emailText">wahyunoerrahmat@gmail.com</strong>
                 </div>
-                <button class="btn-copy" id="copyEmailBtn" data-copy="wahyunoerrahmat@gmail.com">Salin Email</button>
+                <button class="btn-copy-email" id="copyEmailBtn" data-copy="wahyunoerrahmat@gmail.com">Salin Email</button>
               </div>
 
-              <a href="https://github.com/wahyu2810" target="_blank" class="contact-item">
-                <div class="contact-item-left">
-                  <div class="contact-item-icon">💻</div>
-                  <div>
-                    <strong style="display: block;">GitHub Profile</strong>
-                    <span style="color: var(--text-muted);">github.com/wahyu2810</span>
-                  </div>
+              <!-- GitHub Link -->
+              <a href="https://github.com/wahyu2810" target="_blank" class="channel-box channel-link">
+                <div class="channel-icon">💻</div>
+                <div class="channel-details">
+                  <span class="channel-label">GitHub Account Profile</span>
+                  <strong class="channel-value">github.com/wahyu2810</strong>
                 </div>
-                <span style="color: var(--accent-secondary);">↗</span>
+                <span class="channel-arrow">↗</span>
               </a>
 
-              <a href="https://linkedin.com" target="_blank" class="contact-item">
-                <div class="contact-item-left">
-                  <div class="contact-item-icon">👔</div>
-                  <div>
-                    <strong style="display: block;">LinkedIn Professional</strong>
-                    <span style="color: var(--text-muted);">Jaringan Profesional &amp; Portofolio Karir</span>
-                  </div>
+              <!-- LinkedIn Link -->
+              <a href="https://linkedin.com" target="_blank" class="channel-box channel-link">
+                <div class="channel-icon">👔</div>
+                <div class="channel-details">
+                  <span class="channel-label">LinkedIn Professional Network</span>
+                  <strong class="channel-value">Koneksi &amp; Portofolio Karir</strong>
                 </div>
-                <span style="color: var(--accent-secondary);">↗</span>
+                <span class="channel-arrow">↗</span>
               </a>
             </div>
           </div>
 
           <!-- Interactive Contact Form -->
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name" class="form-label">Nama Lengkap</label>
-              <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda..." required>
-            </div>
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm">
+              <div class="form-title">Kirim Pesan Cepat</div>
+              
+              <div class="form-group">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda..." required>
+              </div>
 
-            <div class="form-group">
-              <label for="email" class="form-label">Alamat Email</label>
-              <input type="email" id="email" class="form-control" placeholder="nama@perusahaan.com" required>
-            </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Alamat Email</label>
+                <input type="email" id="email" class="form-control" placeholder="nama@perusahaan.com" required>
+              </div>
 
-            <div class="form-group">
-              <label for="message" class="form-label">Subjek &amp; Pesan Proyek</label>
-              <textarea id="message" class="form-control" placeholder="Jelaskan kebutuhan proyek atau topik diskusi yang ingin Anda bahas..." required></textarea>
-            </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Subjek &amp; Detail Pesan</label>
+                <textarea id="message" class="form-control" placeholder="Tuliskan pesan, pertanyaan tutorial, atau topik diskusi proyek Anda di sini..." required></textarea>
+              </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-              <span>Kirim Pesan Sekarang 🚀</span>
-            </button>
-          </form>
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>⚡ Kirim Pesan Sekarang</span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ======================================================================
-       Footer
+       Footer (Minimal Executive Bar)
        ====================================================================== -->
   <footer class="footer">
     <div class="container footer-content">
-      <div class="social-links">
-        <a href="https://github.com/wahyu2810" target="_blank" class="social-link" aria-label="GitHub">GH</a>
-        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">IN</a>
-        <a href="#hero" class="social-link" aria-label="Top">↑</a>
+      <div class="footer-left">
+        <strong class="footer-brand">Wahyu Noer Rahmat</strong>
+        <span>Software Engineer &amp; Full-Stack Architect Portfolio</span>
       </div>
-      <p>&copy; 2026 Wahyu Noer Rahmat. Engineered with passion for GitHub Pages (<code style="color: var(--accent-secondary);">wahyunoerrahmat.github.io</code>).</p>
+      <div class="footer-right">
+        <span>&copy; 2026 Wahyu Noer Rahmat. Engineered with clean standards for <code class="footer-code">wahyunoerrahmat.github.io</code>.</span>
+        <a href="#hero" class="btn-top" aria-label="Kembali ke Atas">↑ Top</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Custom JS -->
+  <!-- Custom JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
