@@ -307,7 +307,7 @@ function initTutorialModal() {
     },
     'absensi-magang': {
       tag: 'TUTORIAL CARA MEMBUAT • FULL-STACK WEB APPLICATION',
-      title: 'Sistem Manajemen Absensi Magang & Karyawan Terintegrasi',
+      title: 'Proyek Akhir Sistem Absensi Mahasiswa',
       repoUrl: 'https://github.com/wahyunoerrahmat/wahyu-noer-rahmat-proyek-akhir-absensi',
       steps: [
         {
