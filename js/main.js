@@ -902,14 +902,15 @@ function initContactForm() {
       btnSendEmail.innerHTML = '<span>⏳ Mengirim...</span>';
       btnSendEmail.disabled = true;
 
-      fetch('https://formsubmit.co/ajax/wahyunoerrahmat@gmail.com', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          _subject: 'Pesan Baru dari Portfolio: ' + data.name,
+          access_key: '27bcdc5c-536e-408c-a3e6-41adb9390692',
+          subject: 'Pesan Baru dari Portfolio: ' + data.name,
           Nama: data.name,
           Email: data.email,
           Pesan: data.message
