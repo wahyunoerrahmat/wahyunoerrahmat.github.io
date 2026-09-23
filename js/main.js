@@ -874,23 +874,51 @@ function initCopyEmail() {
  */
 function initContactForm() {
   const form = document.getElementById('contactForm');
+  const btnSendEmail = document.getElementById('btnSendEmail');
+  const btnSendWhatsapp = document.getElementById('btnSendWhatsapp');
   if (!form) return;
+
+  function getFormData() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    return { name, email, message };
+  }
+
+  function validateForm(data) {
+    if (!data.name || !data.email || !data.message) {
+      showToast('Mohon lengkapi semua kolom form (Nama, Email, dan Pesan).');
+      return false;
+    }
+    return true;
+  }
+
+  if (btnSendEmail) {
+    btnSendEmail.addEventListener('click', () => {
+      const data = getFormData();
+      if (!validateForm(data)) return;
+      
+      const subject = encodeURIComponent('Pesan dari ' + data.name);
+      const body = encodeURIComponent('Nama: ' + data.name + '\nEmail: ' + data.email + '\n\nPesan:\n' + data.message);
+      window.open('mailto:wahyunoerrahmat@gmail.com?subject=' + subject + '&body=' + body);
+      form.reset();
+    });
+  }
+
+  if (btnSendWhatsapp) {
+    btnSendWhatsapp.addEventListener('click', () => {
+      const data = getFormData();
+      if (!validateForm(data)) return;
+
+      const text = encodeURIComponent('Halo Wahyu,\n\nNama saya ' + data.name + ' (' + data.email + ').\n\n' + data.message);
+      // Ganti dengan nomor WhatsApp Anda, format: 628...
+      window.open('https://wa.me/6281234567890?text=' + text); 
+      form.reset();
+    });
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>⚡ Mengirim Pesan...</span>';
-
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-      form.reset();
-      showToast('Pesan Anda berhasil dikirim! Saya akan segera merespons pesan Anda.');
-    }, 1100);
   });
 }
 

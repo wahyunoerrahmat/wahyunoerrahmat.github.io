@@ -930,9 +930,14 @@
                 <textarea id="message" class="form-control" placeholder="Tuliskan pesan, pertanyaan tutorial, atau topik diskusi proyek Anda di sini..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-submit">
-                <span>⚡ Kirim Pesan Sekarang</span>
-              </button>
+              <div style="display: flex; gap: 1rem;">
+                <button type="button" id="btnSendEmail" class="btn btn-primary btn-submit" style="flex: 1;">
+                  <span>✉️ Kirim via Email</span>
+                </button>
+                <button type="button" id="btnSendWhatsapp" class="btn btn-primary btn-submit" style="flex: 1; background-color: #25D366; color: white; border: none;">
+                  <span>💬 Kirim via WhatsApp</span>
+                </button>
+              </div>
             </form>
           </div>
         </div>
