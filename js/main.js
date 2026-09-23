@@ -898,10 +898,36 @@ function initContactForm() {
       const data = getFormData();
       if (!validateForm(data)) return;
       
-      const subject = encodeURIComponent('Pesan dari ' + data.name);
-      const body = encodeURIComponent('Nama: ' + data.name + '\nEmail: ' + data.email + '\n\nPesan:\n' + data.message);
-      window.open('mailto:wahyunoerrahmat@gmail.com?subject=' + subject + '&body=' + body);
-      form.reset();
+      const originalText = btnSendEmail.innerHTML;
+      btnSendEmail.innerHTML = '<span>⏳ Mengirim...</span>';
+      btnSendEmail.disabled = true;
+
+      fetch('https://formsubmit.co/ajax/wahyunoerrahmat@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'Pesan Baru dari Portfolio: ' + data.name,
+          Nama: data.name,
+          Email: data.email,
+          Pesan: data.message
+        })
+      })
+      .then(response => response.json())
+      .then(result => {
+        showToast('Pesan berhasil terkirim ke email Anda!');
+        form.reset();
+      })
+      .catch(error => {
+        showToast('Gagal mengirim pesan. Silakan coba lagi.');
+        console.error(error);
+      })
+      .finally(() => {
+        btnSendEmail.innerHTML = originalText;
+        btnSendEmail.disabled = false;
+      });
     });
   }
 
